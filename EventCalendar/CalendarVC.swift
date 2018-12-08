@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 class CalendarVC: UIViewController {
+    @IBOutlet var addEventButton: UIButton! // hidden when observe friend's calendar
     @IBOutlet var monthNameLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
@@ -59,5 +60,11 @@ extension CalendarVC: UICollectionViewDataSource {
         return collectionView.dequeueReusableCell(withReuseIdentifier: "MonthDayCell", for: indexPath)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                               withReuseIdentifier: "CalendarHeader",
+                                                               for: indexPath)
+    }
 }

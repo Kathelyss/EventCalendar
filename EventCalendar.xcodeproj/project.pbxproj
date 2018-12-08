@@ -10,6 +10,7 @@
 		9451575321BC7CF000C73C86 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451575221BC7CF000C73C86 /* FriendsVC.swift */; };
 		9451575521BC7D2000C73C86 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451575421BC7D2000C73C86 /* ProfileVC.swift */; };
 		9451575721BC7FA500C73C86 /* MonthDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451575621BC7FA500C73C86 /* MonthDayCell.swift */; };
+		94529D3C21BC85C900544878 /* CallendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D3B21BC85C900544878 /* CallendarHeaderView.swift */; };
 		948F7466219877C1004859AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7465219877C1004859AF /* AppDelegate.swift */; };
 		948F7468219877C1004859AF /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7467219877C1004859AF /* CalendarVC.swift */; };
 		948F746B219877C1004859AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948F7469219877C1004859AF /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		9451575221BC7CF000C73C86 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
 		9451575421BC7D2000C73C86 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		9451575621BC7FA500C73C86 /* MonthDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDayCell.swift; sourceTree = "<group>"; };
+		94529D3B21BC85C900544878 /* CallendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallendarHeaderView.swift; sourceTree = "<group>"; };
 		948F7462219877C1004859AF /* EventCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948F7465219877C1004859AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948F7467219877C1004859AF /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				948F7474219877C4004859AF /* Info.plist */,
 				948F7465219877C1004859AF /* AppDelegate.swift */,
 				948F746C219877C1004859AF /* EventCalendar.xcdatamodeld */,
+				94529D3B21BC85C900544878 /* CallendarHeaderView.swift */,
 			);
 			path = EventCalendar;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				948F7466219877C1004859AF /* AppDelegate.swift in Sources */,
 				9451575721BC7FA500C73C86 /* MonthDayCell.swift in Sources */,
 				9451575321BC7CF000C73C86 /* FriendsVC.swift in Sources */,
+				94529D3C21BC85C900544878 /* CallendarHeaderView.swift in Sources */,
 				948F746E219877C1004859AF /* EventCalendar.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
