@@ -9,22 +9,22 @@
 import UIKit
 
 class ProfileVC: UIViewController {
-
+    @IBOutlet var avatarImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        logoutButton.layer.cornerRadius = 10
+        logoutButton.layer.borderWidth = 1
+        logoutButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        
+        nameLabel.text = "Екатерина Рыжова"
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
+        avatarImageView.image = #imageLiteral(resourceName: "avatar")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func tapLogoutButton(_ sender: UIButton) {
     }
-    */
 
 }
