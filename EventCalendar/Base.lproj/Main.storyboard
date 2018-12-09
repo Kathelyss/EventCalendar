@@ -264,11 +264,98 @@
                     <navigationItem key="navigationItem" title="Друзья" id="LKb-4r-8F2"/>
                     <connections>
                         <outlet property="tableView" destination="eWd-8s-eXT" id="Kkq-nw-rOM"/>
+                        <segue destination="fq2-Ph-Orn" kind="presentation" identifier="ToAddFriendVC" id="PeF-vN-6dG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHD-6p-Nd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918.125" y="118.30985915492958"/>
+        </scene>
+        <!--Add FriendVC-->
+        <scene sceneID="U2E-2C-zaG">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="fq2-Ph-Orn" customClass="AddFriendVC" customModule="EventCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lny-0E-nrI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNq-uK-RMz">
+                                <rect key="frame" x="20" y="105" width="280" height="218.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить друга" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kld-zy-S0T">
+                                        <rect key="frame" x="0.0" y="16" width="280" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя друга" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-3i-CDP">
+                                        <rect key="frame" x="16" y="72" width="248" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-St-H3s">
+                                        <rect key="frame" x="16" y="100.5" width="248" height="30"/>
+                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-Yt-FMA">
+                                        <rect key="frame" x="16" y="162.5" width="248" height="40"/>
+                                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hjf-lT-By1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Добавить">
+                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapAddFriendButton:" destination="fq2-Ph-Orn" eventType="touchUpInside" id="T6Y-j2-noM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="CVa-Yt-FMA" firstAttribute="leading" secondItem="RNq-uK-RMz" secondAttribute="leading" constant="16" id="2d2-iz-HJv"/>
+                                    <constraint firstItem="Kld-zy-S0T" firstAttribute="top" secondItem="RNq-uK-RMz" secondAttribute="top" constant="16" id="6iw-l2-fyL"/>
+                                    <constraint firstItem="psZ-3i-CDP" firstAttribute="top" secondItem="Kld-zy-S0T" secondAttribute="bottom" constant="32" id="AjK-aE-81q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kld-zy-S0T" secondAttribute="trailing" id="Fyn-EE-JqY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rqv-St-H3s" secondAttribute="trailing" constant="16" id="KsK-7w-JQd"/>
+                                    <constraint firstAttribute="trailing" secondItem="psZ-3i-CDP" secondAttribute="trailing" constant="16" id="MSi-0I-Xua"/>
+                                    <constraint firstAttribute="bottom" secondItem="CVa-Yt-FMA" secondAttribute="bottom" constant="16" id="NA1-CR-HkM"/>
+                                    <constraint firstItem="psZ-3i-CDP" firstAttribute="leading" secondItem="Rqv-St-H3s" secondAttribute="leading" id="Yk3-gr-Nv3"/>
+                                    <constraint firstItem="Kld-zy-S0T" firstAttribute="leading" secondItem="RNq-uK-RMz" secondAttribute="leading" id="eNa-2N-18m"/>
+                                    <constraint firstItem="CVa-Yt-FMA" firstAttribute="top" secondItem="Rqv-St-H3s" secondAttribute="bottom" constant="32" id="fIX-UG-lHH"/>
+                                    <constraint firstAttribute="trailing" secondItem="CVa-Yt-FMA" secondAttribute="trailing" constant="16" id="jxY-FZ-89x"/>
+                                    <constraint firstItem="Rqv-St-H3s" firstAttribute="top" secondItem="psZ-3i-CDP" secondAttribute="bottom" constant="8" id="or3-jb-ORZ"/>
+                                    <constraint firstItem="psZ-3i-CDP" firstAttribute="leading" secondItem="RNq-uK-RMz" secondAttribute="leading" constant="16" id="y0g-yp-u7x"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RNq-uK-RMz" firstAttribute="leading" secondItem="iyd-ZN-WFl" secondAttribute="leading" constant="20" id="2zc-ob-VH5"/>
+                            <constraint firstItem="iyd-ZN-WFl" firstAttribute="trailing" secondItem="RNq-uK-RMz" secondAttribute="trailing" constant="20" id="aXx-9m-Muk"/>
+                            <constraint firstItem="RNq-uK-RMz" firstAttribute="centerY" secondItem="iyd-ZN-WFl" secondAttribute="centerY" constant="-80" id="pUX-jY-bjZ"/>
+                            <constraint firstItem="RNq-uK-RMz" firstAttribute="centerX" secondItem="iyd-ZN-WFl" secondAttribute="centerX" id="sLK-xP-1Xm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iyd-ZN-WFl"/>
+                    </view>
+                    <connections>
+                        <outlet property="addFriendButton" destination="CVa-Yt-FMA" id="H0d-dQ-jAG"/>
+                        <outlet property="containerView" destination="RNq-uK-RMz" id="nMw-lr-TcC"/>
+                        <outlet property="friendNameTextField" destination="Rqv-St-H3s" id="n9H-0d-XpU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q19-of-SSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2921.25" y="118.30985915492958"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="dUH-de-RCB">

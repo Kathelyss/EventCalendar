@@ -31,7 +31,7 @@ class FriendsVC: UIViewController {
     
     @objc
     func addFriend() {
-        
+        performSegue(withIdentifier: "ToAddFriendVC", sender: self)
     }
     
     @objc
