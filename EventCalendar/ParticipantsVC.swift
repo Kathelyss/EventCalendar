@@ -25,7 +25,7 @@ class ParticipantsVC: UIViewController {
    
     @objc
     func close() {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 

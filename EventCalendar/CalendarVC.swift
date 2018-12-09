@@ -22,13 +22,13 @@ class CalendarVC: UIViewController {
         addEventButton.contentHorizontalAlignment = .left
         addEventButton.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addEventButton)
-        let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        searchButton.setTitle("🔍", for: .normal)
-        searchButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
-        searchButton.titleLabel?.font = UIFont(name: "System", size: 20)
-        searchButton.contentHorizontalAlignment = .right
-        searchButton.addTarget(self, action: #selector(searchEvents), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
+        let futureEventsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        futureEventsButton.setTitle("≡", for: .normal)
+        futureEventsButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        futureEventsButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
+        futureEventsButton.contentHorizontalAlignment = .right
+        futureEventsButton.addTarget(self, action: #selector(tapFutureEvents), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: futureEventsButton)
     }
 
     @objc
@@ -37,18 +37,20 @@ class CalendarVC: UIViewController {
     }
     
     @objc
-    func searchEvents() {
-        
+    func tapFutureEvents() {
+        performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EventVC {
+            vc.isMyEvent = false
+        }
+    }
+    
     @IBAction func tapPreviousMonthButton(_ sender: UIButton) {
     }
     
     @IBAction func tapNextMonthButton(_ sender: UIButton) {
-    }
-
-    @IBAction func tapFutureEventsButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
     }
 
 }
@@ -86,6 +88,6 @@ extension CalendarVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ToEventVC", sender: self)
+        performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
     }
 }

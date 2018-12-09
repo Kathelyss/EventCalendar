@@ -9,13 +9,16 @@
 import UIKit
 
 class EventVC: UIViewController {
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var containerView: UIView!
     @IBOutlet var eventNameTextField: UITextField!
-    @IBOutlet var eventDateTextField: UIDatePicker!
-    @IBOutlet var eventTimeTextField: UIDatePicker!
+    @IBOutlet var eventDateTextView: UITextField!
+    @IBOutlet var eventTimeTextView: UITextField!
     @IBOutlet var eventDescriptionTextField: UITextView!
     @IBOutlet var eventButton: UIButton! //may be delete or subscribe button
     @IBOutlet var friendsButton: UIButton!
+    
+    var isMyEvent: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,9 @@ class EventVC: UIViewController {
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         containerView.addGestureRecognizer(tapRecognizer)
+        
+        setupDate()
+        setupTime()
         
         friendsButton.layer.cornerRadius = 10
         friendsButton.layer.borderWidth = 1
@@ -35,7 +41,7 @@ class EventVC: UIViewController {
         backButton.contentHorizontalAlignment = .left
         backButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-        
+        if isMyEvent {
         let editOrDoneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         editOrDoneButton.setTitle("Готово", for: .normal) //видна, если мое событие
 //        editOrDoneButton.setTitle("Править", for: .normal) //видна, если мое событие
@@ -45,18 +51,69 @@ class EventVC: UIViewController {
         editOrDoneButton.addTarget(self, action: #selector(createEvent), for: .touchUpInside)
 //        editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editOrDoneButton)
+        }
 
+        if isMyEvent {
+            eventButton.setTitle("Удалить событие", for: .normal)
+            eventButton.layer.cornerRadius = 10
+            eventButton.layer.borderWidth = 0
+            eventButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        } else {
+            eventButton.setTitle("Отметить участие", for: .normal)
+            eventButton.layer.cornerRadius = 10
+            eventButton.layer.borderWidth = 1
+            eventButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+            eventButton.layer.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.2).cgColor
+        }
+    }
+    
+    private func setupDate() {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        picker.locale = Locale(identifier: "RU")
+        picker.setDate(Date(), animated: false)
+        dateChanged(picker)
+        eventDateTextView.inputView = picker
+    }
+    
+    private func setupTime() {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .time
+        picker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
+        picker.locale = Locale(identifier: "RU")
+        timeChanged(picker)
+//        picker.setDate(, animated: <#T##Bool#>)
+        eventTimeTextView.inputView = picker
+    }
+    
+    @objc
+    func dateChanged(_ picker: UIDatePicker) {
+        let date = picker.date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM YYYY"
+        formatter.locale = Locale(identifier: "RU")
+        eventDateTextView.text = formatter.string(from: date)
+    }
+    
+    @objc
+    func timeChanged(_ picker: UIDatePicker) {
+        let date = picker.date
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "RU")
+        eventTimeTextView.text = formatter.string(from: date)
     }
     
     @objc
     func close() {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc
     func createEvent() { //close view
         // send data
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc
@@ -66,9 +123,7 @@ class EventVC: UIViewController {
     
     @objc
     func closeKeyboard() {
-        // tmp
-        performSegue(withIdentifier: "ToParticipationVC", sender: self)
-//        view.endEditing(true)
+        view.endEditing(true)
     }
 
     @IBAction func tapFriendsButton(_ sender: UIButton) {
@@ -76,7 +131,10 @@ class EventVC: UIViewController {
     }
     
     @IBAction func tapEventButton(_ sender: UIButton) {
-        // if not my event, i can subscribe
-        performSegue(withIdentifier: "ToParticipationVC", sender: self)
+        if !isMyEvent {
+            performSegue(withIdentifier: "ToParticipationVC", sender: self)
+        } else {
+            //delete event
+        }
     }
 }
