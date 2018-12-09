@@ -24,6 +24,7 @@ class EventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         containerView.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
@@ -31,12 +32,34 @@ class EventVC: UIViewController {
         
         setupDate()
         setupTime()
+        navigationController?.title = navigationTitle
         
+        addButtons()
+    }
+    
+    private func setupDate() {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        picker.locale = Locale(identifier: "RU")
+        picker.setDate(Date(), animated: false)
+        dateChanged(picker)
+        eventDateTextView.inputView = picker
+    }
+    
+    private func setupTime() {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .time
+        picker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
+        picker.locale = Locale(identifier: "RU")
+        timeChanged(picker)
+        eventTimeTextView.inputView = picker
+    }
+    
+    func addButtons() {
         friendsButton.layer.cornerRadius = 10
         friendsButton.layer.borderWidth = 1
         friendsButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
-        
-        navigationController?.title = navigationTitle
         
         let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         backButton.setTitle("Назад", for: .normal)
@@ -72,25 +95,6 @@ class EventVC: UIViewController {
             eventButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
             eventButton.layer.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1).cgColor
         }
-    }
-    
-    private func setupDate() {
-        let picker = UIDatePicker()
-        picker.datePickerMode = .date
-        picker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        picker.locale = Locale(identifier: "RU")
-        picker.setDate(Date(), animated: false)
-        dateChanged(picker)
-        eventDateTextView.inputView = picker
-    }
-    
-    private func setupTime() {
-        let picker = UIDatePicker()
-        picker.datePickerMode = .time
-        picker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
-        picker.locale = Locale(identifier: "RU")
-        timeChanged(picker)
-        eventTimeTextView.inputView = picker
     }
     
     @objc

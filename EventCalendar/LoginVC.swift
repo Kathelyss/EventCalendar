@@ -20,6 +20,7 @@ class LoginVC: UIViewController {
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         view.addGestureRecognizer(tapRecognizer)
+        
         loginButton.layer.cornerRadius = 10
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor

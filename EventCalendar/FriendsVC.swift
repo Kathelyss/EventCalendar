@@ -13,6 +13,11 @@ class FriendsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addButtons()
+    }
+    
+    func addButtons() {
         let addFriendButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         addFriendButton.setTitle("⊕", for: .normal)
         addFriendButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
@@ -28,6 +33,7 @@ class FriendsVC: UIViewController {
         editFriendListButton.contentHorizontalAlignment = .right
         editFriendListButton.addTarget(self, action: #selector(editFriendList), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editFriendListButton)
+        
     }
     
     @objc

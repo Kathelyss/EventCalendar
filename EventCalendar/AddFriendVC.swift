@@ -15,10 +15,12 @@ class AddFriendVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         containerView.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         containerView.addGestureRecognizer(tapRecognizer)
+        
         addFriendButton.layer.cornerRadius = 10
         addFriendButton.layer.borderWidth = 1
         addFriendButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor

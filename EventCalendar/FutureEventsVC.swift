@@ -13,9 +13,19 @@ class FutureEventsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // details label is date - when seeing from Calendar
-        // and time - when seeing from exact date
         
+        addButtons()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EventVC {
+            vc.isMyEvent = false
+            vc.isNewEvent = false
+            vc.navigationTitle = "Детали события"
+        }
+    }
+    
+    func addButtons() {
         let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // hidden when observe friend's calendar
         addEventButton.setTitle("⊕", for: .normal)
         addEventButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
@@ -31,14 +41,6 @@ class FutureEventsVC: UIViewController {
         backButton.contentHorizontalAlignment = .left
         backButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? EventVC {
-            vc.isMyEvent = false
-            vc.isNewEvent = false
-            vc.navigationTitle = "Детали события"
-        }
     }
     
     @objc
@@ -71,6 +73,8 @@ extension FutureEventsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // details label is date - when seeing from Calendar
+        // and time - when seeing from exact date
         return tableView.dequeueReusableCell(withIdentifier: "FutureEventCell", for: indexPath)
     }
     

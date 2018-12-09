@@ -18,6 +18,7 @@ class ProfileVC: UIViewController {
         logoutButton.layer.cornerRadius = 10
         logoutButton.layer.borderWidth = 1
         logoutButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
         avatarImageView.layer.borderWidth = 1
         avatarImageView.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor

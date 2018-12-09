@@ -23,9 +23,35 @@ class CalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.allowsMultipleSelection = false
         
+        addButtons()
+        collectionView.allowsMultipleSelection = false
         setupCalendar()
+    }
+
+    private func setupCalendar() {
+        currentMonthIndex = Calendar.current.component(.month, from: Date()) - 1
+        currentYearIndex = Calendar.current.component(.year, from: Date())
+        todaysDate = Calendar.current.component(.day, from: Date())
+        
+        let date = Calendar.current.component(.month, from: Date()) - currentMonthIndex
+        firstWeekDayOfMonth = getFirstWeekDay()
+        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)" //
+    }
+    
+    func didChangeMonthIndex(monthIndex: Int, year: Int) {
+        currentMonthIndex = monthIndex
+        currentYearIndex = year
+        firstWeekDayOfMonth = getFirstWeekDay()
+        collectionView.reloadData()
+        
+    }
+    
+    func getFirstWeekDay() -> Int {
+        return Date().startOfMonth() - 1 // sunday is 7th day
+    }
+    
+    func addButtons() {
         let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // hidden when observe friend's calendar
         addEventButton.setTitle("⊕", for: .normal)
         addEventButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
@@ -41,28 +67,7 @@ class CalendarVC: UIViewController {
         futureEventsButton.contentHorizontalAlignment = .right
         futureEventsButton.addTarget(self, action: #selector(tapFutureEvents), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: futureEventsButton)
-    }
-
-    private func setupCalendar() {
-        currentMonthIndex = Calendar.current.component(.month, from: Date()) - 1
-        currentYearIndex = Calendar.current.component(.year, from: Date())
-        todaysDate = Calendar.current.component(.day, from: Date())
         
-        let date = Calendar.current.component(.month, from: Date()) - currentMonthIndex
-        firstWeekDayOfMonth = getFirstWeekDay() // get date
-        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)" //
-    }
-    
-    func didChangeMonthIndex(monthIndex: Int, year: Int) {
-        currentMonthIndex = monthIndex
-        currentYearIndex = year
-        firstWeekDayOfMonth = getFirstWeekDay() //
-        collectionView.reloadData()
-        
-    }
-    
-    func getFirstWeekDay() -> Int {
-        return Date().startOfMonth() - 1 // sunday is 7th day
     }
     
     @objc
