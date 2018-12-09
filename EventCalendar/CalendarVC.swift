@@ -13,9 +13,12 @@ class CalendarVC: UIViewController {
     @IBOutlet var monthNameLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
+    let dataSource = CalendarDataSource()
+    
     let monthArray = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
                       "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-    let numberOfDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    
+    let currentMonth: [CalendarCellModel] = []
     var currentMonthIndex: Int = 0
     var currentYearIndex: Int = 0
     var todaysDate = 0
@@ -26,29 +29,15 @@ class CalendarVC: UIViewController {
         
         addButtons()
         collectionView.allowsMultipleSelection = false
-        setupCalendar()
+//        setupCalendar()
+        dataSource.createModels(date: Date())
+//        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
     }
 
     private func setupCalendar() {
         currentMonthIndex = Calendar.current.component(.month, from: Date()) - 1
         currentYearIndex = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
-        
-        let date = Calendar.current.component(.month, from: Date()) - currentMonthIndex
-        firstWeekDayOfMonth = getFirstWeekDay()
-        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)" //
-    }
-    
-    func didChangeMonthIndex(monthIndex: Int, year: Int) {
-        currentMonthIndex = monthIndex
-        currentYearIndex = year
-        firstWeekDayOfMonth = getFirstWeekDay()
-        collectionView.reloadData()
-        
-    }
-    
-    func getFirstWeekDay() -> Int {
-        return Date().startOfMonth() - 1 // sunday is 7th day
     }
     
     func addButtons() {
@@ -91,23 +80,15 @@ class CalendarVC: UIViewController {
     }
     
     @IBAction func tapPreviousMonthButton(_ sender: UIButton) {
-        currentMonthIndex -= 1
-        if currentMonthIndex < 0 {
-            currentMonthIndex = 11
-            currentYearIndex -= 1
-        }
-        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
-        didChangeMonthIndex(monthIndex: currentMonthIndex, year: currentYearIndex)
+        dataSource.decrementMonth()
+//        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
+        collectionView.reloadData()
     }
     
     @IBAction func tapNextMonthButton(_ sender: UIButton) {
-        currentMonthIndex += 1
-        if currentMonthIndex > 10 {
-            currentMonthIndex = 0
-            currentYearIndex += 1
-        }
-        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
-        didChangeMonthIndex(monthIndex: currentMonthIndex, year: currentYearIndex)
+        dataSource.incrementMonth()
+//        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
+        collectionView.reloadData()
     }
 
 }
@@ -136,14 +117,11 @@ extension CalendarVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthDayCell",
                                                       for: indexPath) as! MonthDayCell
         cell.layer.cornerRadius = 5
-        if indexPath.item < firstWeekDayOfMonth - 1 ||
-            indexPath.item > numberOfDaysInMonth[currentMonthIndex] + firstWeekDayOfMonth - 2 {
-            cell.isHidden = true
-        } else {
-            let calcDate = indexPath.row - firstWeekDayOfMonth + 2
-            cell.isHidden = false
-            cell.dayNumberLabel.text = "\(calcDate)"
-        }
+
+        let model = dataSource.models[indexPath.row]
+        cell.dayNumberLabel.text = model.title
+        cell.isHidden = model.title == ""
+
         return cell
     }
     
@@ -165,21 +143,5 @@ extension CalendarVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1)
-    }
-}
-
-// allows to get first day of month
-extension Date {
-    func startOfMonth() -> Int {
-        guard let interval = Calendar.current.dateInterval(of: .month, for: Date()) else {
-            print("Error!")
-            return 0
-        }
-        
-        return interval.start.weekDay
-    }
-    
-    var weekDay: Int {
-        return Calendar.current.component(.weekday, from: self)
     }
 }
