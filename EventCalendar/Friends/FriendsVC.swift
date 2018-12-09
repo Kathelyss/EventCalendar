@@ -39,6 +39,15 @@ class FriendsVC: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? AddFriendVC {
+            vc.onAddFriend = { [weak self] text in
+                self?.dataSource.models.append(FriendCellModel(id: UUID(), name: text, avatar: ""))
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
     @objc
     func addFriend() {
         performSegue(withIdentifier: "ToAddFriendVC", sender: self)
@@ -71,5 +80,17 @@ extension FriendsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            self.dataSource.models.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        default:
+            break
+        }
     }
 }

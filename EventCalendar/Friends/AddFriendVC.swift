@@ -13,6 +13,8 @@ class AddFriendVC: UIViewController {
     @IBOutlet var friendNameTextField: UITextField!
     @IBOutlet var addFriendButton: UIButton!
     
+    var onAddFriend:((String) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +38,7 @@ class AddFriendVC: UIViewController {
     }
     
     @IBAction func tapAddFriendButton(_ sender: UIButton) {
-        // send data
+        onAddFriend?(friendNameTextField.text ?? "")
         close()
     }
     

@@ -130,6 +130,16 @@
 			path = FutureEvents;
 			sourceTree = "<group>";
 		};
+		94529D6621BDD98D00544878 /* Participation */ = {
+			isa = PBXGroup;
+			children = (
+				94529D4921BCD57A00544878 /* ParticipationVC.swift */,
+				94529D4B21BCDAF300544878 /* ParticipantsVC.swift */,
+				94529D5921BDC5F700544878 /* ParticipantDataSource.swift */,
+			);
+			path = Participation;
+			sourceTree = "<group>";
+		};
 		948F7459219877C1004859AF = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +163,9 @@
 				948F7469219877C1004859AF /* Main.storyboard */,
 				94529D5421BDBBF200544878 /* Calendar */,
 				94529D4521BCB5C600544878 /* EventVC.swift */,
-				94529D4921BCD57A00544878 /* ParticipationVC.swift */,
-				94529D4B21BCDAF300544878 /* ParticipantsVC.swift */,
-				94529D5921BDC5F700544878 /* ParticipantDataSource.swift */,
-				94529D6521BDCED100544878 /* FutureEvents */,
 				94529D6421BDCA1E00544878 /* Friends */,
+				94529D6521BDCED100544878 /* FutureEvents */,
+				94529D6621BDD98D00544878 /* Participation */,
 				94529D4121BCB26D00544878 /* LoginVC.swift */,
 				9451575421BC7D2000C73C86 /* ProfileVC.swift */,
 				94529D6321BDC6EE00544878 /* CellModels */,

@@ -102,8 +102,8 @@ extension CalendarVC: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthDayCell",
                                                       for: indexPath) as! MonthDayCell
-        cell.layer.cornerRadius = 5
-        
+        cell.layer.cornerRadius = cell.layer.bounds.width / 2
+        cell.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1)
         let model = dataSource.models[indexPath.row]
         cell.dayNumberLabel.text = model.title
         cell.isHidden = model.title == ""
