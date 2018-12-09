@@ -18,13 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Месяц" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8e-R8-UI2">
-                                <rect key="frame" x="72" y="120" width="176" height="21.5"/>
+                                <rect key="frame" x="72" y="96" width="176" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-0k-wNw">
-                                <rect key="frame" x="16" y="157.5" width="288" height="345.5"/>
+                                <rect key="frame" x="16" y="149.5" width="288" height="313.5"/>
                                 <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YVK-W0-tvc">
                                     <size key="itemSize" width="50" height="50"/>
@@ -129,63 +128,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Aww-82-cDy"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-de-7ql">
-                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-IH-76l">
-                                        <rect key="frame" x="16" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="CCG-oh-qDi"/>
-                                            <constraint firstAttribute="width" secondItem="T4M-IH-76l" secondAttribute="height" multiplier="1:1" id="tBH-mQ-waC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="⊕">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapAddEventButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5n-wM-tQZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu8-lj-ctO">
-                                        <rect key="frame" x="264" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Eu8-lj-ctO" secondAttribute="height" multiplier="1:1" id="jdu-sZ-nVt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="🔍"/>
-                                        <connections>
-                                            <action selector="tapSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qb0-PX-q3K"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-qo-BZW">
-                                        <rect key="frame" x="140" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="uLQ-x9-OiL"/>
-                                            <constraint firstAttribute="width" secondItem="uYv-qo-BZW" secondAttribute="height" multiplier="1:1" id="yx9-uf-tnk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="≡">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapFutureEventsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QjU-0O-ONY"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.11012916507652723" green="0.8944641673643503" blue="0.90301752089999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Eu8-lj-ctO" firstAttribute="width" secondItem="T4M-IH-76l" secondAttribute="width" id="Gut-tU-zfV"/>
-                                    <constraint firstItem="uYv-qo-BZW" firstAttribute="centerX" secondItem="JnM-de-7ql" secondAttribute="centerX" id="MTu-4I-q7E"/>
-                                    <constraint firstItem="uYv-qo-BZW" firstAttribute="centerY" secondItem="T4M-IH-76l" secondAttribute="centerY" id="NrO-YL-2uT"/>
-                                    <constraint firstItem="Eu8-lj-ctO" firstAttribute="centerY" secondItem="T4M-IH-76l" secondAttribute="centerY" id="YQj-Qj-lDb"/>
-                                    <constraint firstAttribute="height" constant="40" id="aZ1-Jg-x0w"/>
-                                    <constraint firstItem="T4M-IH-76l" firstAttribute="leading" secondItem="JnM-de-7ql" secondAttribute="leading" constant="16" id="g8n-ey-gGz"/>
-                                    <constraint firstItem="T4M-IH-76l" firstAttribute="centerY" secondItem="JnM-de-7ql" secondAttribute="centerY" id="hoT-fD-lCW"/>
-                                    <constraint firstAttribute="trailing" secondItem="Eu8-lj-ctO" secondAttribute="trailing" constant="16" id="vCC-5Z-YzN"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGc-Wn-fhc">
-                                <rect key="frame" x="16" y="111" width="40" height="40"/>
+                                <rect key="frame" x="16" y="87" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="QIz-ZL-j6h"/>
                                     <constraint firstAttribute="width" secondItem="JGc-Wn-fhc" secondAttribute="height" multiplier="1:1" id="lw8-n3-rsh"/>
@@ -199,7 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA7-kt-tLs">
-                                <rect key="frame" x="264" y="111" width="40" height="40"/>
+                                <rect key="frame" x="264" y="87" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bA7-kt-tLs" secondAttribute="height" multiplier="1:1" id="EPW-qF-pm7"/>
                                 </constraints>
@@ -211,30 +155,43 @@
                                     <action selector="tapNextMonthButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vbc-GH-R3q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-qo-BZW">
+                                <rect key="frame" x="140" y="471" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="uLQ-x9-OiL"/>
+                                    <constraint firstAttribute="width" secondItem="uYv-qo-BZW" secondAttribute="height" multiplier="1:1" id="yx9-uf-tnk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="≡">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapFutureEventsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QjU-0O-ONY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NyT-0k-wNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1Dd-6h-3C0"/>
-                            <constraint firstItem="F8e-R8-UI2" firstAttribute="top" secondItem="JnM-de-7ql" secondAttribute="bottom" constant="16" id="7rf-ES-3Ge"/>
+                            <constraint firstItem="uYv-qo-BZW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3dI-1O-DUi"/>
+                            <constraint firstItem="F8e-R8-UI2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="7cN-PX-2XI"/>
                             <constraint firstItem="bA7-kt-tLs" firstAttribute="centerY" secondItem="F8e-R8-UI2" secondAttribute="centerY" id="8xI-z1-aDv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uYv-qo-BZW" secondAttribute="bottom" constant="8" id="IF2-zz-ZCm"/>
+                            <constraint firstItem="uYv-qo-BZW" firstAttribute="top" secondItem="NyT-0k-wNw" secondAttribute="bottom" constant="8" id="KwC-g8-Obs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bA7-kt-tLs" secondAttribute="trailing" constant="16" id="MLV-bS-QR3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NyT-0k-wNw" secondAttribute="bottom" constant="16" id="OZZ-cC-K0s"/>
-                            <constraint firstItem="JnM-de-7ql" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Oeb-og-u5c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NyT-0k-wNw" secondAttribute="trailing" constant="16" id="UeD-oY-9BE"/>
                             <constraint firstItem="F8e-R8-UI2" firstAttribute="leading" secondItem="JGc-Wn-fhc" secondAttribute="trailing" constant="16" id="bjW-Xa-LYG"/>
                             <constraint firstItem="JGc-Wn-fhc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="koD-h5-FTv"/>
                             <constraint firstItem="bA7-kt-tLs" firstAttribute="leading" secondItem="F8e-R8-UI2" secondAttribute="trailing" constant="16" id="mHH-qC-CLh"/>
                             <constraint firstItem="JGc-Wn-fhc" firstAttribute="centerY" secondItem="F8e-R8-UI2" secondAttribute="centerY" id="qGO-cs-5S1"/>
                             <constraint firstItem="bA7-kt-tLs" firstAttribute="width" secondItem="JGc-Wn-fhc" secondAttribute="width" id="uVh-GA-Xyr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JnM-de-7ql" secondAttribute="trailing" id="wGC-He-BOR"/>
-                            <constraint firstItem="NyT-0k-wNw" firstAttribute="top" secondItem="F8e-R8-UI2" secondAttribute="bottom" constant="16" id="yGJ-gT-yUd"/>
-                            <constraint firstItem="JnM-de-7ql" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yqg-Uo-gBM"/>
+                            <constraint firstItem="NyT-0k-wNw" firstAttribute="top" secondItem="F8e-R8-UI2" secondAttribute="bottom" constant="32" id="yGJ-gT-yUd"/>
+                            <constraint firstItem="uYv-qo-BZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zmJ-LZ-4KV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Календарь" id="2Rl-S8-dK6"/>
                     <connections>
-                        <outlet property="addEventButton" destination="T4M-IH-76l" id="mdR-Bv-Hpj"/>
                         <outlet property="collectionView" destination="NyT-0k-wNw" id="XUo-67-7NR"/>
                         <outlet property="monthNameLabel" destination="F8e-R8-UI2" id="edC-ko-cBf"/>
                     </connections>
@@ -262,15 +219,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hcN-8W-1qN">
-                                                    <rect key="frame" x="16" y="5" width="30" height="30"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="hcN-8W-1qN">
+                                                    <rect key="frame" x="16" y="-0.5" width="40" height="40.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hcN-8W-1qN" secondAttribute="height" multiplier="1:1" id="F7C-EJ-sRN"/>
-                                                        <constraint firstAttribute="width" constant="30" id="LnG-bS-OAn"/>
+                                                        <constraint firstAttribute="width" constant="40" id="LnG-bS-OAn"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-vG-Wst">
-                                                    <rect key="frame" x="54" y="9.5" width="258" height="21"/>
+                                                    <rect key="frame" x="64" y="9.5" width="248" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -399,7 +356,7 @@
         <scene sceneID="BzL-K7-jyc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wab-Jl-mBo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Друзья" id="AcL-uX-Kdn"/>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="team_icon" id="AcL-uX-Kdn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6m-lz-kmK">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -419,7 +376,7 @@
         <scene sceneID="5Z2-ct-f9q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EGW-Qt-3Mf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Календарь" id="gJp-Rz-ERD"/>
+                    <tabBarItem key="tabBarItem" title="Календарь" image="calendar_icon" id="gJp-Rz-ERD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EVz-cj-GwS">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -439,7 +396,7 @@
         <scene sceneID="YGZ-Ln-9mb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Mx-hI-psE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" id="S2K-2l-yt8"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="profile_icon" id="S2K-2l-yt8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HXd-XJ-1Bq">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -456,4 +413,10 @@
             <point key="canvasLocation" x="920.625" y="919.0140845070423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar_icon" width="32" height="32"/>
+        <image name="profile_icon" width="30.719999313354492" height="30.719999313354492"/>
+        <image name="team_icon" width="35" height="35"/>
+        <image name="test" width="256" height="256"/>
+    </resources>
 </document>
