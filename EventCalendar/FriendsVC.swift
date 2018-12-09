@@ -20,6 +20,7 @@ class FriendsVC: UIViewController {
         addFriendButton.contentHorizontalAlignment = .left
         addFriendButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addFriendButton)
+        
         let editFriendListButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         editFriendListButton.setTitle("⋮", for: .normal)
         editFriendListButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)

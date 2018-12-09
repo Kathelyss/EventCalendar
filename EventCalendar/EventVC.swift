@@ -15,6 +15,7 @@ class EventVC: UIViewController {
     @IBOutlet var eventTimeTextField: UIDatePicker!
     @IBOutlet var eventDescriptionTextField: UITextView!
     @IBOutlet var eventButton: UIButton! //may be delete or subscribe button
+    @IBOutlet var friendsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class EventVC: UIViewController {
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         containerView.addGestureRecognizer(tapRecognizer)
+        
+        friendsButton.layer.cornerRadius = 10
+        friendsButton.layer.borderWidth = 1
+        friendsButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
         
         let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         backButton.setTitle("Назад", for: .normal)
@@ -61,12 +66,17 @@ class EventVC: UIViewController {
     
     @objc
     func closeKeyboard() {
-        view.endEditing(true)
+        // tmp
+        performSegue(withIdentifier: "ToParticipationVC", sender: self)
+//        view.endEditing(true)
     }
 
     @IBAction func tapFriendsButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToParticipantsVC", sender: self)
     }
     
     @IBAction func tapEventButton(_ sender: UIButton) {
+        // if not my event, i can subscribe
+        performSegue(withIdentifier: "ToParticipationVC", sender: self)
     }
 }

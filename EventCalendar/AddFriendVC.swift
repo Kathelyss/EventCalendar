@@ -36,4 +36,8 @@ class AddFriendVC: UIViewController {
     @IBAction func tapAddFriendButton(_ sender: UIButton) {
         close()
     }
+    
+    @IBAction func tapCloseButton(_ sender: UIButton) {
+        close()
+    }
 }

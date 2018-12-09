@@ -17,6 +17,9 @@
 		94529D4421BCB5A700544878 /* FutureEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4321BCB5A700544878 /* FutureEventsVC.swift */; };
 		94529D4621BCB5C600544878 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4521BCB5C600544878 /* EventVC.swift */; };
 		94529D4821BCCBF700544878 /* FutureEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4721BCCBF700544878 /* FutureEventCell.swift */; };
+		94529D4A21BCD57A00544878 /* ParticipationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4921BCD57A00544878 /* ParticipationVC.swift */; };
+		94529D4C21BCDAF300544878 /* ParticipantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4B21BCDAF300544878 /* ParticipantsVC.swift */; };
+		94529D4E21BCDD3300544878 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4D21BCDD3300544878 /* ParticipantCell.swift */; };
 		948F7466219877C1004859AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7465219877C1004859AF /* AppDelegate.swift */; };
 		948F7468219877C1004859AF /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7467219877C1004859AF /* CalendarVC.swift */; };
 		948F746B219877C1004859AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948F7469219877C1004859AF /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 		94529D4321BCB5A700544878 /* FutureEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventsVC.swift; sourceTree = "<group>"; };
 		94529D4521BCB5C600544878 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 		94529D4721BCCBF700544878 /* FutureEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventCell.swift; sourceTree = "<group>"; };
+		94529D4921BCD57A00544878 /* ParticipationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationVC.swift; sourceTree = "<group>"; };
+		94529D4B21BCDAF300544878 /* ParticipantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsVC.swift; sourceTree = "<group>"; };
+		94529D4D21BCDD3300544878 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
 		948F7462219877C1004859AF /* EventCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948F7465219877C1004859AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948F7467219877C1004859AF /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
@@ -78,16 +84,19 @@
 			children = (
 				948F7471219877C4004859AF /* LaunchScreen.storyboard */,
 				948F7469219877C1004859AF /* Main.storyboard */,
-				94529D4121BCB26D00544878 /* LoginVC.swift */,
 				948F7467219877C1004859AF /* CalendarVC.swift */,
 				94529D4521BCB5C600544878 /* EventVC.swift */,
+				94529D4921BCD57A00544878 /* ParticipationVC.swift */,
+				94529D4B21BCDAF300544878 /* ParticipantsVC.swift */,
 				94529D4321BCB5A700544878 /* FutureEventsVC.swift */,
 				9451575221BC7CF000C73C86 /* FriendsVC.swift */,
 				94529D3F21BCABC200544878 /* AddFriendVC.swift */,
+				94529D4121BCB26D00544878 /* LoginVC.swift */,
 				9451575421BC7D2000C73C86 /* ProfileVC.swift */,
 				9451575621BC7FA500C73C86 /* MonthDayCell.swift */,
 				94529D3B21BC85C900544878 /* CallendarHeaderView.swift */,
 				94529D4721BCCBF700544878 /* FutureEventCell.swift */,
+				94529D4D21BCDD3300544878 /* ParticipantCell.swift */,
 				94529D3D21BC931C00544878 /* FriendCell.swift */,
 				948F746F219877C4004859AF /* Assets.xcassets */,
 				948F7474219877C4004859AF /* Info.plist */,
@@ -178,9 +187,12 @@
 				94529D3E21BC931C00544878 /* FriendCell.swift in Sources */,
 				94529D4421BCB5A700544878 /* FutureEventsVC.swift in Sources */,
 				9451575721BC7FA500C73C86 /* MonthDayCell.swift in Sources */,
+				94529D4A21BCD57A00544878 /* ParticipationVC.swift in Sources */,
 				9451575321BC7CF000C73C86 /* FriendsVC.swift in Sources */,
+				94529D4C21BCDAF300544878 /* ParticipantsVC.swift in Sources */,
 				94529D3C21BC85C900544878 /* CallendarHeaderView.swift in Sources */,
 				948F746E219877C1004859AF /* EventCalendar.xcdatamodeld in Sources */,
+				94529D4E21BCDD3300544878 /* ParticipantCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
