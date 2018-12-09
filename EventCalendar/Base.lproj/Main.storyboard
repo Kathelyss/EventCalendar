@@ -365,6 +365,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Детали события" id="UYT-yA-RJv"/>
                     <connections>
+                        <outlet property="containerView" destination="AuJ-D5-z5b" id="4Ni-5z-Ocb"/>
                         <outlet property="eventButton" destination="mIe-W9-NWi" id="XTn-Vo-zLX"/>
                         <outlet property="eventDateTextField" destination="zMB-uE-RPB" id="DX5-At-hdd"/>
                         <outlet property="eventDescriptionTextField" destination="h5s-jJ-cC3" id="xls-cQ-3eP"/>

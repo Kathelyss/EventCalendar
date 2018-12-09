@@ -9,6 +9,7 @@
 import UIKit
 
 class EventVC: UIViewController {
+    @IBOutlet var containerView: UIView!
     @IBOutlet var eventNameTextField: UITextField!
     @IBOutlet var eventDateTextField: UIDatePicker!
     @IBOutlet var eventTimeTextField: UIDatePicker!
@@ -17,7 +18,37 @@ class EventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        containerView.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
+        containerView.addGestureRecognizer(tapRecognizer)
+        
+        let editOrDoneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        editOrDoneButton.setTitle("Готово", for: .normal) //видна, если мое событие
+//        editOrDoneButton.setTitle("Править", for: .normal) //видна, если мое событие
+        editOrDoneButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        editOrDoneButton.titleLabel?.font = UIFont(name: "System", size: 14)
+        editOrDoneButton.contentHorizontalAlignment = .right
+        editOrDoneButton.addTarget(self, action: #selector(createEvent), for: .touchUpInside)
+//        editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editOrDoneButton)
 
+    }
+    
+    @objc
+    func createEvent() { //close view
+        // send data
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc
+    func editEvent() {
+        
+    }
+    
+    @objc
+    func closeKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func tapFriendsButton(_ sender: UIButton) {

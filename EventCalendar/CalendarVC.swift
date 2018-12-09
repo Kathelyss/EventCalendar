@@ -84,4 +84,8 @@ extension CalendarVC: UICollectionViewDataSource {
                                                                withReuseIdentifier: "CalendarHeader",
                                                                for: indexPath)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToEventVC", sender: self)
+    }
 }
