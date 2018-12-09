@@ -33,7 +33,7 @@ class CalendarVC: UIViewController {
 
     @objc
     func addEvent() {
-        
+        performSegue(withIdentifier: "ToEventVC", sender: self)
     }
     
     @objc
@@ -48,6 +48,7 @@ class CalendarVC: UIViewController {
     }
 
     @IBAction func tapFutureEventsButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
     }
 
 }

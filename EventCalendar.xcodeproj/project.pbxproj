@@ -14,6 +14,8 @@
 		94529D3E21BC931C00544878 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D3D21BC931C00544878 /* FriendCell.swift */; };
 		94529D4021BCABC200544878 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D3F21BCABC200544878 /* AddFriendVC.swift */; };
 		94529D4221BCB26D00544878 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4121BCB26D00544878 /* LoginVC.swift */; };
+		94529D4421BCB5A700544878 /* FutureEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4321BCB5A700544878 /* FutureEventsVC.swift */; };
+		94529D4621BCB5C600544878 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D4521BCB5C600544878 /* EventVC.swift */; };
 		948F7466219877C1004859AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7465219877C1004859AF /* AppDelegate.swift */; };
 		948F7468219877C1004859AF /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7467219877C1004859AF /* CalendarVC.swift */; };
 		948F746B219877C1004859AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948F7469219877C1004859AF /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		94529D3D21BC931C00544878 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		94529D3F21BCABC200544878 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
 		94529D4121BCB26D00544878 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		94529D4321BCB5A700544878 /* FutureEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventsVC.swift; sourceTree = "<group>"; };
+		94529D4521BCB5C600544878 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 		948F7462219877C1004859AF /* EventCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948F7465219877C1004859AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948F7467219877C1004859AF /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				948F7474219877C4004859AF /* Info.plist */,
 				948F7465219877C1004859AF /* AppDelegate.swift */,
 				948F746C219877C1004859AF /* EventCalendar.xcdatamodeld */,
+				94529D4321BCB5A700544878 /* FutureEventsVC.swift */,
+				94529D4521BCB5C600544878 /* EventVC.swift */,
 			);
 			path = EventCalendar;
 			sourceTree = "<group>";
@@ -162,9 +168,11 @@
 				9451575521BC7D2000C73C86 /* ProfileVC.swift in Sources */,
 				948F7468219877C1004859AF /* CalendarVC.swift in Sources */,
 				948F7466219877C1004859AF /* AppDelegate.swift in Sources */,
+				94529D4621BCB5C600544878 /* EventVC.swift in Sources */,
 				94529D4021BCABC200544878 /* AddFriendVC.swift in Sources */,
 				94529D4221BCB26D00544878 /* LoginVC.swift in Sources */,
 				94529D3E21BC931C00544878 /* FriendCell.swift in Sources */,
+				94529D4421BCB5A700544878 /* FutureEventsVC.swift in Sources */,
 				9451575721BC7FA500C73C86 /* MonthDayCell.swift in Sources */,
 				9451575321BC7CF000C73C86 /* FriendsVC.swift in Sources */,
 				94529D3C21BC85C900544878 /* CallendarHeaderView.swift in Sources */,
