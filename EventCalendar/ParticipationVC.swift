@@ -18,9 +18,17 @@ class ParticipationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureSwitches()
         saveButton.layer.cornerRadius = 10
         saveButton.layer.borderWidth = 1
         saveButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+    }
+    
+    func configureSwitches() {
+        willCome.isOn = !maybeWillCome.isOn && !maybeWillNotCome.isOn && !willNotCome.isOn
+        maybeWillCome.isOn = !willCome.isOn && !willNotCome.isOn && !maybeWillNotCome.isOn
+        maybeWillNotCome.isOn = !willCome.isOn && !willNotCome.isOn && !maybeWillCome.isOn
+        willNotCome.isOn = !willCome.isOn && !maybeWillCome.isOn && !maybeWillNotCome.isOn
     }
     
     func close() {

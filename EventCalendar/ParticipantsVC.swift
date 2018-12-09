@@ -14,7 +14,7 @@ class ParticipantsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         backButton.setTitle("Назад", for: .normal)
         backButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         backButton.titleLabel?.font = UIFont(name: "System", size: 14)

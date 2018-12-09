@@ -16,7 +16,15 @@ class FutureEventsVC: UIViewController {
         // details label is date - when seeing from Calendar
         // and time - when seeing from exact date
         
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // hidden when observe friend's calendar
+        addEventButton.setTitle("⊕", for: .normal)
+        addEventButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        addEventButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
+        addEventButton.contentHorizontalAlignment = .right
+        addEventButton.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addEventButton)
+        
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         backButton.setTitle("Назад", for: .normal)
         backButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         backButton.titleLabel?.font = UIFont(name: "System", size: 14)
@@ -24,7 +32,20 @@ class FutureEventsVC: UIViewController {
         backButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EventVC {
+            vc.isMyEvent = false
+            vc.isNewEvent = false
+            vc.navigationTitle = "Детали события"
+        }
+    }
+    
+    @objc
+    func addEvent() {
+        performSegue(withIdentifier: "ToEventVC", sender: self)
+    }
+    
     @objc
     func close() {
         navigationController?.popViewController(animated: true)
@@ -55,5 +76,9 @@ extension FutureEventsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToEventVC", sender: self)
     }
 }

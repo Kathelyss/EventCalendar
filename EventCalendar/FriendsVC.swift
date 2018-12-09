@@ -13,7 +13,7 @@ class FriendsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let addFriendButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let addFriendButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         addFriendButton.setTitle("⊕", for: .normal)
         addFriendButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         addFriendButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
@@ -21,7 +21,7 @@ class FriendsVC: UIViewController {
         addFriendButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addFriendButton)
         
-        let editFriendListButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let editFriendListButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         editFriendListButton.setTitle("⋮", for: .normal)
         editFriendListButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         editFriendListButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)

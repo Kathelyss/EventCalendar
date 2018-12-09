@@ -197,7 +197,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AuJ-D5-z5b">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="658"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfx-s5-ZWP">
                                                 <rect key="frame" x="12" y="16" width="295" height="18"/>
@@ -274,7 +274,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-W9-NWi">
-                                                <rect key="frame" x="12" y="626" width="295" height="40"/>
+                                                <rect key="frame" x="12" y="602" width="295" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="UsF-UA-uoS"/>
                                                 </constraints>
@@ -320,7 +320,7 @@
                                             <constraint firstItem="GIU-nc-81n" firstAttribute="leading" secondItem="LAw-qZ-2MW" secondAttribute="leading" id="PPm-7a-h5F"/>
                                             <constraint firstItem="D1j-u7-7av" firstAttribute="top" secondItem="sfx-s5-ZWP" secondAttribute="bottom" constant="8" id="UHJ-gT-Zlr"/>
                                             <constraint firstItem="LAw-qZ-2MW" firstAttribute="leading" secondItem="sfx-s5-ZWP" secondAttribute="leading" id="VJA-W1-mWf"/>
-                                            <constraint firstItem="mIe-W9-NWi" firstAttribute="top" secondItem="2Us-rq-yQR" secondAttribute="bottom" constant="32" id="VRB-Pa-vVc"/>
+                                            <constraint firstItem="mIe-W9-NWi" firstAttribute="top" secondItem="2Us-rq-yQR" secondAttribute="bottom" constant="8" id="VRB-Pa-vVc"/>
                                             <constraint firstItem="mIe-W9-NWi" firstAttribute="trailing" secondItem="2Us-rq-yQR" secondAttribute="trailing" id="bAS-3g-rVF"/>
                                             <constraint firstItem="LAw-qZ-2MW" firstAttribute="top" secondItem="D1j-u7-7av" secondAttribute="bottom" constant="16" id="bDI-iG-tkH"/>
                                             <constraint firstItem="2Us-rq-yQR" firstAttribute="trailing" secondItem="h5s-jJ-cC3" secondAttribute="trailing" id="boV-6o-QG6"/>
@@ -726,6 +726,7 @@
                     <navigationItem key="navigationItem" title="Будущие события" id="q0u-BI-mSU"/>
                     <connections>
                         <outlet property="tableView" destination="koS-fW-baW" id="TEj-od-vC7"/>
+                        <segue destination="Nu6-vj-DKE" kind="show" identifier="ToEventVC" id="kQr-k5-hxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5g-41-pI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1160,4 +1161,7 @@
         <image name="team_icon" width="35" height="35"/>
         <image name="test" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kQr-k5-hxX"/>
+    </inferredMetricsTieBreakers>
 </document>

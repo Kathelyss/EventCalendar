@@ -19,6 +19,8 @@ class EventVC: UIViewController {
     @IBOutlet var friendsButton: UIButton!
     
     var isMyEvent: Bool = true
+    var isNewEvent: Bool = false
+    var navigationTitle: String = "Детали события"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,9 @@ class EventVC: UIViewController {
         friendsButton.layer.borderWidth = 1
         friendsButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
         
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        navigationController?.title = navigationTitle
+        
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         backButton.setTitle("Назад", for: .normal)
         backButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         backButton.titleLabel?.font = UIFont(name: "System", size: 14)
@@ -42,17 +46,20 @@ class EventVC: UIViewController {
         backButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         if isMyEvent {
-        let editOrDoneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        editOrDoneButton.setTitle("Готово", for: .normal) //видна, если мое событие
-//        editOrDoneButton.setTitle("Править", for: .normal) //видна, если мое событие
-        editOrDoneButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
-        editOrDoneButton.titleLabel?.font = UIFont(name: "System", size: 14)
-        editOrDoneButton.contentHorizontalAlignment = .right
-        editOrDoneButton.addTarget(self, action: #selector(createEvent), for: .touchUpInside)
-//        editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editOrDoneButton)
+            let editOrDoneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            let title = isNewEvent ? "Готово" : "Править"
+            editOrDoneButton.setTitle(title, for: .normal)
+            editOrDoneButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+            editOrDoneButton.titleLabel?.font = UIFont(name: "System", size: 14)
+            editOrDoneButton.contentHorizontalAlignment = .right
+            if isNewEvent {
+                editOrDoneButton.addTarget(self, action: #selector(createEvent), for: .touchUpInside)
+            } else {
+                editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
+            }
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editOrDoneButton)
         }
-
+        
         if isMyEvent {
             eventButton.setTitle("Удалить событие", for: .normal)
             eventButton.layer.cornerRadius = 10
@@ -63,7 +70,7 @@ class EventVC: UIViewController {
             eventButton.layer.cornerRadius = 10
             eventButton.layer.borderWidth = 1
             eventButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
-            eventButton.layer.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.2).cgColor
+            eventButton.layer.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1).cgColor
         }
     }
     
@@ -83,7 +90,6 @@ class EventVC: UIViewController {
         picker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
         picker.locale = Locale(identifier: "RU")
         timeChanged(picker)
-//        picker.setDate(, animated: <#T##Bool#>)
         eventTimeTextView.inputView = picker
     }
     
@@ -125,7 +131,7 @@ class EventVC: UIViewController {
     func closeKeyboard() {
         view.endEditing(true)
     }
-
+    
     @IBAction func tapFriendsButton(_ sender: UIButton) {
         performSegue(withIdentifier: "ToParticipantsVC", sender: self)
     }

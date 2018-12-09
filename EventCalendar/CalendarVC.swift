@@ -15,14 +15,14 @@ class CalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40)) // hidden when observe friend's calendar
+        let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // hidden when observe friend's calendar
         addEventButton.setTitle("⊕", for: .normal)
         addEventButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         addEventButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
         addEventButton.contentHorizontalAlignment = .left
         addEventButton.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addEventButton)
-        let futureEventsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let futureEventsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         futureEventsButton.setTitle("≡", for: .normal)
         futureEventsButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
         futureEventsButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
@@ -43,7 +43,11 @@ class CalendarVC: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? EventVC {
-            vc.isMyEvent = false
+            vc.isMyEvent = true
+            vc.isNewEvent = true
+            vc.navigationTitle = "Новое событие"
+        } else if let vc = segue.destination as? FutureEventsVC {
+            vc.navigationController?.title = "Все будущие события" // события в выбранную дату ?
         }
     }
     

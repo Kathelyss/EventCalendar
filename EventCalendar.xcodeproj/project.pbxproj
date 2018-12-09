@@ -63,6 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94529D4F21BD653F00544878 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9451575621BC7FA500C73C86 /* MonthDayCell.swift */,
+				94529D3B21BC85C900544878 /* CallendarHeaderView.swift */,
+				94529D4721BCCBF700544878 /* FutureEventCell.swift */,
+				94529D4D21BCDD3300544878 /* ParticipantCell.swift */,
+				94529D3D21BC931C00544878 /* FriendCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		948F7459219877C1004859AF = {
 			isa = PBXGroup;
 			children = (
@@ -93,11 +105,7 @@
 				94529D3F21BCABC200544878 /* AddFriendVC.swift */,
 				94529D4121BCB26D00544878 /* LoginVC.swift */,
 				9451575421BC7D2000C73C86 /* ProfileVC.swift */,
-				9451575621BC7FA500C73C86 /* MonthDayCell.swift */,
-				94529D3B21BC85C900544878 /* CallendarHeaderView.swift */,
-				94529D4721BCCBF700544878 /* FutureEventCell.swift */,
-				94529D4D21BCDD3300544878 /* ParticipantCell.swift */,
-				94529D3D21BC931C00544878 /* FriendCell.swift */,
+				94529D4F21BD653F00544878 /* Cells */,
 				948F746F219877C4004859AF /* Assets.xcassets */,
 				948F7474219877C4004859AF /* Info.plist */,
 				948F7465219877C1004859AF /* AppDelegate.swift */,
