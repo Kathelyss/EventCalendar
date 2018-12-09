@@ -18,14 +18,14 @@ class CalendarVC: UIViewController {
         let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40)) // hidden when observe friend's calendar
         addEventButton.setTitle("⊕", for: .normal)
         addEventButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
-        addEventButton.titleLabel?.font = UIFont(name: "Menlo", size: 35)
+        addEventButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
         addEventButton.contentHorizontalAlignment = .left
         addEventButton.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addEventButton)
         let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         searchButton.setTitle("🔍", for: .normal)
         searchButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
-        searchButton.titleLabel?.font = UIFont(name: "Menlo", size: 20)
+        searchButton.titleLabel?.font = UIFont(name: "System", size: 20)
         searchButton.contentHorizontalAlignment = .right
         searchButton.addTarget(self, action: #selector(searchEvents), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)

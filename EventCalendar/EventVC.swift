@@ -23,6 +23,14 @@ class EventVC: UIViewController {
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         containerView.addGestureRecognizer(tapRecognizer)
         
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        backButton.setTitle("Назад", for: .normal)
+        backButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        backButton.titleLabel?.font = UIFont(name: "System", size: 14)
+        backButton.contentHorizontalAlignment = .left
+        backButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
         let editOrDoneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         editOrDoneButton.setTitle("Готово", for: .normal) //видна, если мое событие
 //        editOrDoneButton.setTitle("Править", for: .normal) //видна, если мое событие
@@ -33,6 +41,11 @@ class EventVC: UIViewController {
 //        editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editOrDoneButton)
 
+    }
+    
+    @objc
+    func close() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc

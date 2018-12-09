@@ -384,14 +384,115 @@
                     <view key="view" contentMode="scaleToFill" id="o1g-FO-yi5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="u3y-e6-Pzf">
+                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhK-5Y-rqx">
+                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Все">
+                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapAllEventsButton:" destination="HBw-6P-v7H" eventType="touchUpInside" id="SZb-Jc-GAw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8l-W8-xNL">
+                                        <rect key="frame" x="106.5" y="0.0" width="107" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Мои">
+                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapMyEventsButton:" destination="HBw-6P-v7H" eventType="touchUpInside" id="hE9-1E-xrW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahk-So-wK9">
+                                        <rect key="frame" x="213.5" y="0.0" width="106.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Друзей">
+                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapFriendsEventsButton:" destination="HBw-6P-v7H" eventType="touchUpInside" id="9M0-N2-llb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="v8l-W8-xNL" firstAttribute="width" secondItem="ahk-So-wK9" secondAttribute="width" id="Uci-qf-8FU"/>
+                                    <constraint firstItem="UhK-5Y-rqx" firstAttribute="width" secondItem="ahk-So-wK9" secondAttribute="width" id="YUQ-wo-XHX"/>
+                                    <constraint firstAttribute="height" constant="30" id="jVB-D6-zFN"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="3" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="koS-fW-baW">
+                                <rect key="frame" x="0.0" y="94" width="320" height="474"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FutureEventCell" rowHeight="54" id="AEF-CT-TNU" customClass="FutureEventCell" customModule="EventCalendar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="3" width="320" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AEF-CT-TNU" id="Tg7-wn-79X">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название события" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3o-uI-JCe">
+                                                    <rect key="frame" x="20" y="8" width="284" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата / время события" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3H-hd-ktS">
+                                                    <rect key="frame" x="20" y="32" width="284" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="I3o-uI-JCe" secondAttribute="trailing" constant="16" id="BaN-Sv-fu1"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="J3H-hd-ktS" secondAttribute="bottom" constant="3" id="FyE-uK-MVI"/>
+                                                <constraint firstItem="J3H-hd-ktS" firstAttribute="trailing" secondItem="I3o-uI-JCe" secondAttribute="trailing" id="NzJ-mw-edi"/>
+                                                <constraint firstItem="J3H-hd-ktS" firstAttribute="top" secondItem="I3o-uI-JCe" secondAttribute="bottom" constant="3" id="heo-AS-p5F"/>
+                                                <constraint firstItem="I3o-uI-JCe" firstAttribute="top" secondItem="Tg7-wn-79X" secondAttribute="top" constant="8" id="jTr-gg-TBi"/>
+                                                <constraint firstItem="I3o-uI-JCe" firstAttribute="leading" secondItem="Tg7-wn-79X" secondAttribute="leading" constant="20" id="nje-C4-tTD"/>
+                                                <constraint firstItem="J3H-hd-ktS" firstAttribute="leading" secondItem="I3o-uI-JCe" secondAttribute="leading" id="pRs-Tz-Axq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventDetailsLabel" destination="J3H-hd-ktS" id="V2I-De-HuH"/>
+                                            <outlet property="eventNameLabel" destination="I3o-uI-JCe" id="qGR-7D-cVN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HBw-6P-v7H" id="FTn-3X-fyn"/>
+                                    <outlet property="delegate" destination="HBw-6P-v7H" id="3nc-Jb-Dgq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="koS-fW-baW" firstAttribute="top" secondItem="u3y-e6-Pzf" secondAttribute="bottom" id="9eC-6J-aWi"/>
+                            <constraint firstItem="dyn-dp-jDF" firstAttribute="bottom" secondItem="koS-fW-baW" secondAttribute="bottom" id="GLR-a1-JbL"/>
+                            <constraint firstItem="u3y-e6-Pzf" firstAttribute="leading" secondItem="dyn-dp-jDF" secondAttribute="leading" id="HSF-8x-WGb"/>
+                            <constraint firstItem="u3y-e6-Pzf" firstAttribute="top" secondItem="dyn-dp-jDF" secondAttribute="top" id="HWZ-dm-4Gv"/>
+                            <constraint firstItem="dyn-dp-jDF" firstAttribute="trailing" secondItem="u3y-e6-Pzf" secondAttribute="trailing" id="Ilq-3H-mcM"/>
+                            <constraint firstItem="koS-fW-baW" firstAttribute="leading" secondItem="dyn-dp-jDF" secondAttribute="leading" id="hgh-3h-meD"/>
+                            <constraint firstItem="dyn-dp-jDF" firstAttribute="trailing" secondItem="koS-fW-baW" secondAttribute="trailing" id="ppB-Aw-dhB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dyn-dp-jDF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Будущие события" id="q0u-BI-mSU"/>
+                    <connections>
+                        <outlet property="tableView" destination="koS-fW-baW" id="TEj-od-vC7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5g-41-pI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5825.625" y="-662.32394366197184"/>
+            <point key="canvasLocation" x="3886.875" y="-1458.8028169014085"/>
         </scene>
         <!--Event Calendar-->
         <scene sceneID="gpr-2n-JBF">
@@ -834,7 +935,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-b4-AyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4828.125" y="-662.32394366197184"/>
+            <point key="canvasLocation" x="2891" y="-1457"/>
         </scene>
     </scenes>
     <resources>
