@@ -10,4 +10,5 @@ import Foundation
 
 struct CalendarCellModel {
     let title: String
+    
 }

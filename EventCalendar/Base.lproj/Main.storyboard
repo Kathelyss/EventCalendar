@@ -528,6 +528,10 @@
                         <outlet property="saveButton" destination="pnw-Ly-5ut" id="bTi-rp-UJh"/>
                         <outlet property="willCome" destination="c1W-bJ-fvE" id="0ZE-uS-onH"/>
                         <outlet property="willNotCome" destination="c08-ge-36t" id="xvm-xv-xkW"/>
+                        <outletCollection property="switches" destination="c1W-bJ-fvE" collectionClass="NSMutableArray" id="JAh-YJ-FHb"/>
+                        <outletCollection property="switches" destination="qPS-ut-xec" collectionClass="NSMutableArray" id="5Su-eW-2UL"/>
+                        <outletCollection property="switches" destination="gLW-jh-mhI" collectionClass="NSMutableArray" id="Aue-yj-iDh"/>
+                        <outletCollection property="switches" destination="c08-ge-36t" collectionClass="NSMutableArray" id="dlR-36-ZXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuN-VD-ao7" userLabel="First Responder" sceneMemberID="firstResponder"/>

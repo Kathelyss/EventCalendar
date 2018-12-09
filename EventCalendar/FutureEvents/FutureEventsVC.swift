@@ -11,10 +11,22 @@ import UIKit
 class FutureEventsVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     
+    let dataSource = FutureEventsDataSource()
+    var navigationTitle: String = "Будущие события"
+    var date: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addButtons()
+        dataSource.createModels()
+        if let date = date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM"
+            let dateString = formatter.string(from: date)
+            title = "События на " + dateString
+        } else {
+            title = navigationTitle
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,13 +81,18 @@ extension FutureEventsVC: UITableViewDelegate {
 
 extension FutureEventsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return date == nil ? dataSource.allModels.count : dataSource.modelsForDate.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // details label is date - when seeing from Calendar
-        // and time - when seeing from exact date
-        return tableView.dequeueReusableCell(withIdentifier: "FutureEventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FutureEventCell", for: indexPath)
+        
+        if let cell = cell as? FutureEventCell {
+            let model = date == nil ? dataSource.allModels[indexPath.row] : dataSource.modelsForDate[indexPath.row]
+            cell.eventNameLabel.text = model.eventTitle
+            cell.eventDetailsLabel.text = model.eventDetails
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

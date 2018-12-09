@@ -20,6 +20,18 @@ class CalendarDataSource {
         return calendar
     }()
     
+    func dateAt(_ indexPath: IndexPath) -> Date? {
+        let dateString = models[indexPath.row].title
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ru-RU")
+        formatter.dateFormat = "MM.YYYY"
+        
+        let resultString = dateString + "." + formatter.string(from: date)
+        let nextFormatter = DateFormatter()
+        nextFormatter.dateFormat = "dd.MM.YYYY"
+        return nextFormatter.date(from: resultString)
+    }
+    
     func createModels(date: Date) {
         self.date = date
         var models: [CalendarCellModel] = []

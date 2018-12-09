@@ -14,21 +14,26 @@ class ParticipationVC: UIViewController {
     @IBOutlet var maybeWillNotCome: UISwitch!
     @IBOutlet var willNotCome: UISwitch!
     @IBOutlet var saveButton: UIButton!
+    @IBOutlet var switches: [UISwitch]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureSwitches()
+        
+        switches.forEach {
+            $0.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
+        }
         saveButton.layer.cornerRadius = 10
         saveButton.layer.borderWidth = 1
         saveButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
     }
     
-    func configureSwitches() {
-        willCome.isOn = !maybeWillCome.isOn && !maybeWillNotCome.isOn && !willNotCome.isOn
-        maybeWillCome.isOn = !willCome.isOn && !willNotCome.isOn && !maybeWillNotCome.isOn
-        maybeWillNotCome.isOn = !willCome.isOn && !willNotCome.isOn && !maybeWillCome.isOn
-        willNotCome.isOn = !willCome.isOn && !maybeWillCome.isOn && !maybeWillNotCome.isOn
+    @objc
+    func switchValueChanged(_ switche: UISwitch) {
+        if switche.isOn {
+            for swich in switches where swich != switche {
+                swich.setOn(!switche.isOn, animated: true)
+            }
+        }
     }
     
     func close() {
@@ -40,7 +45,17 @@ class ParticipationVC: UIViewController {
     }
     
     @IBAction func tapSaveButton(_ sender: UIButton) {
-        // send data
+        var choice = ""
+        if willCome.isOn {
+            choice = "Приду"
+        } else if maybeWillCome.isOn {
+            choice = "Скорее приду"
+        } else if maybeWillNotCome.isOn {
+            choice = "Скорее не приду"
+        } else if willNotCome.isOn {
+            //не добавлять в участники
+        }
+        // send choice, add to participant model
         close()
     }
 }

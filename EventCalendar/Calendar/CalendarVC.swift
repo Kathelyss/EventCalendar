@@ -50,7 +50,7 @@ class CalendarVC: UIViewController {
     
     @objc
     func tapFutureEvents() {
-        performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
+        performSegue(withIdentifier: "ToFutureEventsVC", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,7 +59,9 @@ class CalendarVC: UIViewController {
             vc.isNewEvent = true
             vc.navigationTitle = "Новое событие"
         } else if let vc = segue.destination as? FutureEventsVC {
-            vc.navigationController?.title = "Все будущие события" // события в выбранную дату ?
+            if let indexPath = sender as? IndexPath {
+                vc.date = dataSource.dateAt(indexPath)
+            }
         }
     }
     
@@ -121,7 +123,7 @@ extension CalendarVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 0.5)
-        performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
+        performSegue(withIdentifier: "ToFutureEventsVC", sender: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

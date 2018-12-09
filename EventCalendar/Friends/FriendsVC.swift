@@ -11,10 +11,13 @@ import UIKit
 class FriendsVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     
+    let dataSource = FriendsDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addButtons()
+        dataSource.createModels()
     }
     
     func addButtons() {
@@ -53,11 +56,17 @@ extension FriendsVC: UITableViewDelegate {
 
 extension FriendsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataSource.models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
+        
+        if let cell = cell as? FriendCell {
+            let model = dataSource.models[indexPath.row]
+            cell.nameLabel.text = model.name
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
