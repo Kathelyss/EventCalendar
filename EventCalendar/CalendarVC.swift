@@ -15,29 +15,13 @@ class CalendarVC: UIViewController {
     
     let dataSource = CalendarDataSource()
     
-    let monthArray = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-                      "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-    
-    let currentMonth: [CalendarCellModel] = []
-    var currentMonthIndex: Int = 0
-    var currentYearIndex: Int = 0
-    var todaysDate = 0
-    var firstWeekDayOfMonth = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addButtons()
         collectionView.allowsMultipleSelection = false
-//        setupCalendar()
         dataSource.createModels(date: Date())
-//        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
-    }
-
-    private func setupCalendar() {
-        currentMonthIndex = Calendar.current.component(.month, from: Date()) - 1
-        currentYearIndex = Calendar.current.component(.year, from: Date())
-        todaysDate = Calendar.current.component(.day, from: Date())
+        monthNameLabel.text = dataSource.getMonthAndYear()
     }
     
     func addButtons() {
@@ -68,7 +52,7 @@ class CalendarVC: UIViewController {
     func tapFutureEvents() {
         performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? EventVC {
             vc.isMyEvent = true
@@ -81,16 +65,16 @@ class CalendarVC: UIViewController {
     
     @IBAction func tapPreviousMonthButton(_ sender: UIButton) {
         dataSource.decrementMonth()
-//        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
+        monthNameLabel.text = dataSource.getMonthAndYear()
         collectionView.reloadData()
     }
     
     @IBAction func tapNextMonthButton(_ sender: UIButton) {
         dataSource.incrementMonth()
-//        monthNameLabel.text = "\(monthArray[currentMonthIndex]) \(currentYearIndex)"
+        monthNameLabel.text = dataSource.getMonthAndYear()
         collectionView.reloadData()
     }
-
+    
 }
 
 extension CalendarVC: UICollectionViewDelegateFlowLayout {
@@ -117,11 +101,11 @@ extension CalendarVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthDayCell",
                                                       for: indexPath) as! MonthDayCell
         cell.layer.cornerRadius = 5
-
+        
         let model = dataSource.models[indexPath.row]
         cell.dayNumberLabel.text = model.title
         cell.isHidden = model.title == ""
-
+        
         return cell
     }
     
@@ -139,7 +123,7 @@ extension CalendarVC: UICollectionViewDataSource {
         cell?.backgroundColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 0.5)
         performSegue(withIdentifier: "ToFutureEventsVC", sender: self)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1)

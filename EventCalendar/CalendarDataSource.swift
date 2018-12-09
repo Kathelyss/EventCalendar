@@ -14,13 +14,17 @@ class CalendarDataSource {
     let numberOfDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     var date: Date = Date()
     
-    let calendar = Calendar.current
+    let calendar: Calendar = {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "ru-RU")
+        return calendar
+    }()
     
     func createModels(date: Date) {
         self.date = date
         var models: [CalendarCellModel] = []
         let firstMonthWeekDay = firstWeekDayOfMonth(date: date)
-        for _ in 0..<firstMonthWeekDay - 2 {
+        for _ in 1..<firstMonthWeekDay {
             models.append(CalendarCellModel(title: ""))
         }
         let monthIndex = calendar.component(.month, from: date)
@@ -38,8 +42,8 @@ class CalendarDataSource {
             print("Error!")
             return 0
         }
-        
-        return interval.start.weekDay
+        let day = calendar.component(.weekday, from: interval.start)
+        return day == 1 ? 7 : day - 1
     }
     
     func incrementMonth() {
@@ -53,12 +57,13 @@ class CalendarDataSource {
         
         createModels(date: date)
     }
-}
-
-// allows to get first day of month
-extension Date {
-    var weekDay: Int {
-        return Calendar.current.component(.weekday, from: self)
+    
+    func getMonthAndYear() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ru-RU")
+        formatter.dateFormat = "LLLL YYYY"
+        
+        return formatter.string(from: date).capitalized
     }
 }
 
