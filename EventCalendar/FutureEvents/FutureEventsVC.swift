@@ -34,6 +34,10 @@ class FutureEventsVC: UIViewController {
             vc.isMyEvent = false
             vc.isNewEvent = false
             vc.navigationTitle = "Детали события"
+            if let model = sender as? FutureEventCellModel {
+                vc.eventName = model.eventTitle
+                vc.details = model.eventDetails
+            }
         }
     }
     
@@ -90,7 +94,10 @@ extension FutureEventsVC: UITableViewDataSource {
         if let cell = cell as? FutureEventCell {
             let model = date == nil ? dataSource.allModels[indexPath.row] : dataSource.modelsForDate[indexPath.row]
             cell.eventNameLabel.text = model.eventTitle
-            cell.eventDetailsLabel.text = model.eventDetails
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.YYYY"
+            let dateString = formatter.string(from: model.eventDetails)
+            cell.eventDetailsLabel.text = dateString
         }
         return cell
     }
@@ -100,6 +107,7 @@ extension FutureEventsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ToEventVC", sender: self)
+        let model = dataSource.modelsForDate[indexPath.row]
+        performSegue(withIdentifier: "ToEventVC", sender: model)
     }
 }

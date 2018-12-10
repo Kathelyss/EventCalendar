@@ -22,6 +22,9 @@ class EventVC: UIViewController {
     var isNewEvent: Bool = false
     var navigationTitle: String = "Детали события"
     
+    var eventName: String = ""
+    var details: Date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +35,8 @@ class EventVC: UIViewController {
         
         setupDate()
         setupTime()
+        eventNameTextField.text = eventName != "" ? eventName : ""
+//        eventDateTextView.text = details
         navigationController?.title = navigationTitle
         
         addButtons()

@@ -1,5 +1,5 @@
 //
-//  FutureEventCellModel.swift
+//  Event.swift
 //  EventCalendar
 //
 //  Created by kathelyss on 10/12/2018.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct FutureEventCellModel {
-    let id: UUID
-    let eventTitle: String
-    let eventDetails: Date
+struct Event {
+    let title: String
+    let date: Date
+    let description: String
+//    let participants: [ParticipantCellModel]
     
 }
