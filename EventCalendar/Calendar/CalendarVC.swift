@@ -18,6 +18,13 @@ class CalendarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dao = ServerDAO()
+        dao.requestTest(success: { testModel in
+            print(String(describing: testModel))
+        }) { error in
+            print(String(describing: error))
+        }
+        
         addButtons()
         collectionView.allowsMultipleSelection = false
         dataSource.createModels(date: Date())
