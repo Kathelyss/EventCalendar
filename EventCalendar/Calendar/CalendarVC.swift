@@ -33,7 +33,7 @@ class CalendarVC: UIViewController {
     func addButtons() {
         let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // hidden when observe friend's calendar
         addEventButton.setTitle("⊕", for: .normal)
-        addEventButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        addEventButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
         addEventButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
         addEventButton.contentHorizontalAlignment = .left
         addEventButton.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
@@ -41,7 +41,7 @@ class CalendarVC: UIViewController {
         
         let futureEventsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         futureEventsButton.setTitle("≡", for: .normal)
-        futureEventsButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        futureEventsButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
         futureEventsButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
         futureEventsButton.contentHorizontalAlignment = .right
         futureEventsButton.addTarget(self, action: #selector(tapFutureEvents), for: .touchUpInside)
@@ -63,7 +63,6 @@ class CalendarVC: UIViewController {
         if let vc = segue.destination as? EventVC {
             vc.isMyEvent = true
             vc.isNewEvent = true
-            vc.navigationTitle = "Новое событие"
         } else if let vc = segue.destination as? FutureEventsVC {
             if let indexPath = sender as? IndexPath {
                 vc.date = dataSource.dateAt(indexPath)
@@ -109,7 +108,7 @@ extension CalendarVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthDayCell",
                                                       for: indexPath) as! MonthDayCell
         cell.layer.cornerRadius = cell.layer.bounds.width / 2
-        cell.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1)
+        cell.backgroundColor = #colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 0.1)
         let model = dataSource.models[indexPath.row]
         cell.dayNumberLabel.text = model.title
         cell.isHidden = model.title == ""
@@ -128,12 +127,12 @@ extension CalendarVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 0.5)
+        cell?.backgroundColor = #colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 0.5)
         performSegue(withIdentifier: "ToFutureEventsVC", sender: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1)
+        cell?.backgroundColor = #colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 0.1)
     }
 }

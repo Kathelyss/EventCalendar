@@ -16,12 +16,12 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logoutButton.layer.cornerRadius = 10
-        logoutButton.layer.borderWidth = 1
-        logoutButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        logoutButton.layer.borderWidth = CalendarStyle.borderWidth
+        logoutButton.layer.borderColor = CalendarStyle.borderAndTextColor
         
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
-        avatarImageView.layer.borderWidth = 1
-        avatarImageView.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        avatarImageView.layer.borderWidth = CalendarStyle.borderWidth
+        avatarImageView.layer.borderColor = CalendarStyle.borderAndTextColor
         
         Services.shared.dao.requestUser(userId: UUID()/*Services.shared.currentUserId*/, success: { currentUser in
             self.nameLabel.text = currentUser.name

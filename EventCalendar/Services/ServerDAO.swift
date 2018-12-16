@@ -31,7 +31,7 @@ class ServerDAO: DAO {
     }
     
     func login(name: String, success: @escaping (UserModel) -> Void, failure: @escaping (Error) -> Void) {
-        serverGetData(endPoint: "login",
+        serverGetData(endPoint: "user",
                       parameters: ["name": name],
                       success: success,
                       failure: failure)

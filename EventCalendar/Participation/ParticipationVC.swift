@@ -23,8 +23,8 @@ class ParticipationVC: UIViewController {
             $0.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
         }
         saveButton.layer.cornerRadius = 10
-        saveButton.layer.borderWidth = 1
-        saveButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        saveButton.layer.borderWidth = CalendarStyle.borderWidth
+        saveButton.layer.borderColor = CalendarStyle.borderAndTextColor
     }
     
     @objc

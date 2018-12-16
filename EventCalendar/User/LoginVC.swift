@@ -22,8 +22,8 @@ class LoginVC: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
         
         loginButton.layer.cornerRadius = 10
-        loginButton.layer.borderWidth = 1
-        loginButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        loginButton.layer.borderWidth = CalendarStyle.borderWidth
+        loginButton.layer.borderColor = CalendarStyle.borderAndTextColor
     }
     
     @objc

@@ -24,7 +24,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-0k-wNw">
                                 <rect key="frame" x="16" y="149.5" width="288" height="305.5"/>
-                                <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YVK-W0-tvc">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="40"/>
@@ -69,43 +69,43 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПН" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-0w-FVV">
                                                     <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHt-AC-tqp">
                                                     <rect key="frame" x="45" y="0.0" width="38.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СР" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-ki-o5I">
                                                     <rect key="frame" x="83.5" y="0.0" width="40.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ЧТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVE-ef-UBF">
                                                     <rect key="frame" x="124" y="0.0" width="40" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-IW-6n0">
                                                     <rect key="frame" x="164" y="0.0" width="41.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СБ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIC-cD-MFt">
                                                     <rect key="frame" x="205.5" y="0.0" width="41" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВС" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBh-FN-SRE">
                                                     <rect key="frame" x="246.5" y="0.0" width="41.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -136,7 +136,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                 <state key="normal" title="&lt;">
-                                    <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tapPreviousMonthButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjX-yk-oqX"/>
@@ -149,7 +149,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                 <state key="normal" title="&gt;">
-                                    <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tapNextMonthButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vbc-GH-R3q"/>
@@ -206,7 +206,7 @@
                                                     <constraint firstAttribute="width" constant="295" id="XaP-jB-j4C"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1j-u7-7av">
@@ -224,7 +224,7 @@
                                                     <constraint firstAttribute="height" constant="18" id="sf7-Pk-E7R"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUt-MN-9hY">
@@ -233,7 +233,7 @@
                                                     <constraint firstAttribute="height" constant="18" id="Ycv-VO-TO2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlz-Pd-vpy">
@@ -242,7 +242,7 @@
                                                     <constraint firstAttribute="height" constant="18" id="MJe-R4-lCr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-fN-56Z">
@@ -267,13 +267,13 @@
                                                     </textView>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-rq-yQR">
                                                         <rect key="frame" x="0.0" y="266" width="295" height="40"/>
-                                                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Rhc-N3-wZt"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Участники">
-                                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapFriendsButton:" destination="Nu6-vj-DKE" eventType="touchUpInside" id="9kO-qP-LpF"/>
@@ -286,7 +286,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Удалить событие">
-                                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapEventButton:" destination="Nu6-vj-DKE" eventType="touchUpInside" id="AD4-rq-3FV"/>
@@ -405,12 +405,12 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1W-bJ-fvE">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                        <color key="onTintColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приду" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A2-hq-x6J">
                                                         <rect key="frame" x="65" y="0.0" width="183" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -420,12 +420,12 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qPS-ut-xec">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                        <color key="onTintColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скорее приду" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQD-7q-rQ9">
                                                         <rect key="frame" x="65" y="0.0" width="183" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -435,12 +435,12 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gLW-jh-mhI">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                        <color key="onTintColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скорее не приду" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-Rk-Lp1">
                                                         <rect key="frame" x="65" y="0.0" width="183" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -450,12 +450,12 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c08-ge-36t">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                        <color key="onTintColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не приду" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zL4-y6-WRV">
                                                         <rect key="frame" x="65" y="0.0" width="183" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -464,13 +464,13 @@
                                     </stackView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnw-Ly-5ut">
                                         <rect key="frame" x="16" y="244" width="248" height="40"/>
-                                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2zL-zg-MeC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Сохранить">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapAddFriendButton:" destination="fq2-Ph-Orn" eventType="touchUpInside" id="9i4-Bo-dqf"/>
@@ -485,7 +485,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="×">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapCloseButton:" destination="iPm-0V-bbx" eventType="touchUpInside" id="Wwa-to-ioI"/>
@@ -569,7 +569,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGL-qH-Z1n">
                                                     <rect key="frame" x="68" y="10" width="236" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приду" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CX-CU-b4c">
@@ -636,7 +636,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="106.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Все">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapAllEventsButton:" destination="HBw-6P-v7H" eventType="touchUpInside" id="SZb-Jc-GAw"/>
@@ -646,7 +646,7 @@
                                         <rect key="frame" x="106.5" y="0.0" width="107" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Мои">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapMyEventsButton:" destination="HBw-6P-v7H" eventType="touchUpInside" id="hE9-1E-xrW"/>
@@ -656,7 +656,7 @@
                                         <rect key="frame" x="213.5" y="0.0" width="106.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Друзей">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapFriendsEventsButton:" destination="HBw-6P-v7H" eventType="touchUpInside" id="9M0-N2-llb"/>
@@ -750,7 +750,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oG-22-pxO">
                                 <rect key="frame" x="40" y="180" width="240" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDE-aM-5pT">
@@ -762,7 +762,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffq-S6-opm">
                                 <rect key="frame" x="40" y="270.5" width="240" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgR-Hh-3Kf">
@@ -773,13 +773,13 @@
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rna-jw-n4J">
                                 <rect key="frame" x="40" y="392.5" width="240" height="40"/>
-                                <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xxt-MK-iW5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Войти">
-                                    <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tapLoginButton:" destination="PK3-sJ-DI5" eventType="touchUpInside" id="pH5-fD-t9S"/>
@@ -922,7 +922,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="×">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapCloseButton:" destination="fq2-Ph-Orn" eventType="touchUpInside" id="Fxb-rF-20S"/>
@@ -931,7 +931,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя друга" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-3i-CDP">
                                         <rect key="frame" x="16" y="72" width="248" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-St-H3s">
@@ -942,13 +942,13 @@
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-Yt-FMA">
                                         <rect key="frame" x="16" y="162.5" width="248" height="40"/>
-                                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="hjf-lT-By1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Добавить">
-                                            <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="tapAddFriendButton:" destination="fq2-Ph-Orn" eventType="touchUpInside" id="T6Y-j2-noM"/>
@@ -1007,7 +1007,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="spR-90-yQE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="spR-90-yQE">
                                 <rect key="frame" x="64" y="125.5" width="192" height="192"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="spR-90-yQE" secondAttribute="height" multiplier="1:1" id="b8D-AD-LAG"/>
@@ -1020,13 +1020,13 @@
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhp-yb-jBV">
                                 <rect key="frame" x="20" y="405.5" width="280" height="40"/>
-                                <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="f8U-YR-zg7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Выйти">
-                                    <color key="titleColor" red="0.076491401919999993" green="0.62125975509999998" blue="0.62720057929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.23007780313491821" green="0.5918118953704834" blue="0.82882559299468994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tapLogoutButton:" destination="73d-mi-X8Q" eventType="touchUpInside" id="kRv-bz-xGv"/>
@@ -1068,8 +1068,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jj4-wa-cZq">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.076491401919087459" green="0.62125975512976195" blue="0.62720057927563455" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="EGW-Qt-3Mf" kind="relationship" relationship="viewControllers" id="wT5-39-UWA"/>
@@ -1090,7 +1090,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6m-lz-kmK">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1110,7 +1110,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EVz-cj-GwS">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1130,7 +1130,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HXd-XJ-1Bq">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1149,7 +1149,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jNl-Ns-0L5">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1101291651" green="0.89446416740000001" blue="0.90301752089999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.23007780310000001" green="0.59181189540000001" blue="0.82882559300000003" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1165,7 +1165,7 @@
         <image name="calendar_icon" width="32" height="32"/>
         <image name="profile_icon" width="30.719999313354492" height="30.719999313354492"/>
         <image name="team_icon" width="35" height="35"/>
-        <image name="test" width="256" height="256"/>
+        <image name="test" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BDl-Ws-seM"/>

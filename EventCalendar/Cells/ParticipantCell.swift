@@ -16,8 +16,8 @@ class ParticipantCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
-        avatarImageView.layer.borderWidth = 1
-        avatarImageView.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        avatarImageView.layer.borderWidth = CalendarStyle.borderWidth
+        avatarImageView.layer.borderColor = CalendarStyle.borderAndTextColor
     }
 
 }

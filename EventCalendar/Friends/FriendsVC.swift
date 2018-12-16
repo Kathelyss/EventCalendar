@@ -23,7 +23,7 @@ class FriendsVC: UIViewController {
     func addButtons() {
         let addFriendButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         addFriendButton.setTitle("⊕", for: .normal)
-        addFriendButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        addFriendButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
         addFriendButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
         addFriendButton.contentHorizontalAlignment = .left
         addFriendButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
@@ -31,7 +31,7 @@ class FriendsVC: UIViewController {
         
         let editFriendListButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         editFriendListButton.setTitle("⋮", for: .normal)
-        editFriendListButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        editFriendListButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
         editFriendListButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
         editFriendListButton.contentHorizontalAlignment = .right
         editFriendListButton.addTarget(self, action: #selector(editFriendList), for: .touchUpInside)

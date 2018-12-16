@@ -20,7 +20,7 @@ class EventVC: UIViewController {
     
     var isMyEvent: Bool = true
     var isNewEvent: Bool = false
-    var navigationTitle: String = "Детали события"
+//    var navigationTitle: String = "Детали события"
     
     var eventName: String = ""
     var details: Date = Date()
@@ -39,7 +39,7 @@ class EventVC: UIViewController {
         setupTime()
         eventNameTextField.text = eventName != "" ? eventName : ""
 //        eventDateTextView.text = details
-        navigationController?.title = navigationTitle
+//        navigationController?.title = navigationTitle
         
         addButtons()
     }
@@ -65,12 +65,12 @@ class EventVC: UIViewController {
     
     func addButtons() {
         friendsButton.layer.cornerRadius = 10
-        friendsButton.layer.borderWidth = 1
-        friendsButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
+        friendsButton.layer.borderWidth = CalendarStyle.borderWidth
+        friendsButton.layer.borderColor = CalendarStyle.borderAndTextColor
         
         let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         backButton.setTitle("Назад", for: .normal)
-        backButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+        backButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
         backButton.titleLabel?.font = UIFont(name: "System", size: 14)
         backButton.contentHorizontalAlignment = .left
         backButton.addTarget(self, action: #selector(close), for: .touchUpInside)
@@ -79,7 +79,7 @@ class EventVC: UIViewController {
             let editOrDoneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             let title = isNewEvent ? "Готово" : "Править"
             editOrDoneButton.setTitle(title, for: .normal)
-            editOrDoneButton.setTitleColor(#colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1), for: .normal)
+            editOrDoneButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
             editOrDoneButton.titleLabel?.font = UIFont(name: "System", size: 14)
             editOrDoneButton.contentHorizontalAlignment = .right
             if isNewEvent {
@@ -115,9 +115,9 @@ class EventVC: UIViewController {
         } else {
             eventButton.setTitle("Отметить участие", for: .normal)
             eventButton.layer.cornerRadius = 10
-            eventButton.layer.borderWidth = 1
-            eventButton.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
-            eventButton.layer.backgroundColor = #colorLiteral(red: 0.1101291651, green: 0.8944641674, blue: 0.9030175209, alpha: 0.1).cgColor
+            eventButton.layer.borderWidth = CalendarStyle.borderWidth
+            eventButton.layer.borderColor = CalendarStyle.borderAndTextColor
+            eventButton.layer.backgroundColor = #colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 0.1).cgColor
         }
     }
     

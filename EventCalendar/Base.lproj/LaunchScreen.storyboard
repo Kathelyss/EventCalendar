@@ -22,22 +22,22 @@
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="50"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event_icon" translatesAutoresizingMaskIntoConstraints="NO" id="2O9-rY-lia">
-                                <rect key="frame" x="64" y="198.5" width="192" height="191"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start_icon" translatesAutoresizingMaskIntoConstraints="NO" id="cGN-H3-Wnc">
+                                <rect key="frame" x="20" y="154" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="2O9-rY-lia" secondAttribute="height" multiplier="1:1" constant="1" id="au0-Zy-kii"/>
+                                    <constraint firstAttribute="width" secondItem="cGN-H3-Wnc" secondAttribute="height" multiplier="1:1" id="WDB-Qu-mEz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23534279555138637" green="0.62776046990000001" blue="0.61180015978801339" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2O9-rY-lia" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0bu-De-Xd5"/>
                             <constraint firstItem="pbk-of-NHG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="59o-Vm-zhB"/>
+                            <constraint firstItem="cGN-H3-Wnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="81X-dN-q6o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="pbk-of-NHG" secondAttribute="bottom" constant="100" id="FjT-eS-NwR"/>
-                            <constraint firstItem="2O9-rY-lia" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="K6d-4d-JOm"/>
                             <constraint firstItem="pbk-of-NHG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Nos-kb-MPa"/>
-                            <constraint firstItem="2O9-rY-lia" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jnT-X5-vvD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pbk-of-NHG" secondAttribute="trailing" constant="16" id="mPW-mI-uSz"/>
+                            <constraint firstItem="cGN-H3-Wnc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="spt-1V-nuO"/>
+                            <constraint firstItem="cGN-H3-Wnc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ua6-Un-vR5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -48,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="event_icon" width="1200" height="1200"/>
+        <image name="start_icon" width="421" height="421"/>
     </resources>
 </document>
