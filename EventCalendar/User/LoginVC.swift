@@ -32,5 +32,19 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func tapLoginButton(_ sender: UIButton) {
+        guard let name = nameTextField.text else { return }
+        
+        //if user exists, login
+        Services.shared.dao.login(name: name, success: { currentUser in
+//            Services.shared.currentUserId = currentUser.id
+        }) { error in
+            
+        }
+        //else create user
+        Services.shared.dao.createUser(name: name, success: { currentUser in
+//            Services.shared.currentUserId = currentUser.id
+        }) { error in
+            
+        }
     }
 }

@@ -11,6 +11,6 @@ import Foundation
 struct FutureEventCellModel {
     let id: UUID
     let eventTitle: String
-    let eventDetails: Date
+    let eventDetails: String
     
 }

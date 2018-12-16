@@ -1,5 +1,5 @@
 //
-//  UserModel.swift
+//  Formatter.swift
 //  EventCalendar
 //
 //  Created by kathelyss on 16/12/2018.
@@ -8,10 +8,8 @@
 
 import Foundation
 
-struct UserModel: Decodable {
-    let id: UUID
-    let name: String
-    let password: String
-    let avatar: String
-
+class Formatter: DateFormatter {
+    static func toString() {
+        
+    }
 }

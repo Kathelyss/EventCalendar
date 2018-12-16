@@ -36,7 +36,7 @@ class FutureEventsVC: UIViewController {
             vc.navigationTitle = "Детали события"
             if let model = sender as? FutureEventCellModel {
                 vc.eventName = model.eventTitle
-                vc.details = model.eventDetails
+//                vc.details = model.eventDetails
             }
         }
     }
@@ -85,19 +85,16 @@ extension FutureEventsVC: UITableViewDelegate {
 
 extension FutureEventsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return date == nil ? dataSource.allModels.count : dataSource.modelsForDate.count
+        return dataSource.models.count //date == nil ? dataSource.models.count : dataSource.modelsForDate.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FutureEventCell", for: indexPath)
         
         if let cell = cell as? FutureEventCell {
-            let model = date == nil ? dataSource.allModels[indexPath.row] : dataSource.modelsForDate[indexPath.row]
+            let model = dataSource.models[indexPath.row] //date == nil ? dataSource.models[indexPath.row] : dataSource.modelsForDate[indexPath.row]
             cell.eventNameLabel.text = model.eventTitle
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd.MM.YYYY"
-            let dateString = formatter.string(from: model.eventDetails)
-            cell.eventDetailsLabel.text = dateString
+            cell.eventDetailsLabel.text = model.eventDetails
         }
         return cell
     }
@@ -107,7 +104,7 @@ extension FutureEventsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = dataSource.modelsForDate[indexPath.row]
+        let model = dataSource.models[indexPath.row] //dataSource.modelsForDate[indexPath.row]
         performSegue(withIdentifier: "ToEventVC", sender: model)
     }
 }

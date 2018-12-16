@@ -39,6 +39,7 @@ class AddFriendVC: UIViewController {
     
     @IBAction func tapAddFriendButton(_ sender: UIButton) {
         onAddFriend?(friendNameTextField.text ?? "")
+        
         close()
     }
     

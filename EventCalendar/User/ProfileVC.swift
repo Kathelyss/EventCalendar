@@ -23,8 +23,12 @@ class ProfileVC: UIViewController {
         avatarImageView.layer.borderWidth = 1
         avatarImageView.layer.borderColor = #colorLiteral(red: 0.07649140192, green: 0.6212597551, blue: 0.6272005793, alpha: 1).cgColor
         
-        nameLabel.text = "Екатерина Рыжова"
-        avatarImageView.image = #imageLiteral(resourceName: "avatar")
+        Services.shared.dao.requestUser(userId: UUID()/*Services.shared.currentUserId*/, success: { currentUser in
+            self.nameLabel.text = currentUser.name
+//            self.avatarImageView.image = currentUser.avatar
+        }) { error in
+            
+        }
     }
     
     @IBAction func tapLogoutButton(_ sender: UIButton) {

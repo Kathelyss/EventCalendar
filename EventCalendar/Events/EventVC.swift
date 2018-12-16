@@ -24,10 +24,12 @@ class EventVC: UIViewController {
     
     var eventName: String = ""
     var details: Date = Date()
+    var participants: [UserModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eventDescriptionTextField.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor
         containerView.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
@@ -81,9 +83,26 @@ class EventVC: UIViewController {
             editOrDoneButton.titleLabel?.font = UIFont(name: "System", size: 14)
             editOrDoneButton.contentHorizontalAlignment = .right
             if isNewEvent {
+                //show empty event
                 editOrDoneButton.addTarget(self, action: #selector(createEvent), for: .touchUpInside)
+                eventButton.isHidden = true
+                friendsButton.isHidden = true
             } else {
+                Services.shared.dao.requestEvent(eventId: UUID(), success: { eventModel in
+                    self.eventNameTextField.text = eventModel.name
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd.MM.YYYY"
+                    self.eventDateTextView.text = formatter.string(from: eventModel.date)
+                    formatter.dateFormat = "mm:HH"
+                    self.eventTimeTextView.text = formatter.string(from: eventModel.date)
+                    self.eventDescriptionTextField.text = eventModel.description
+                    self.participants = eventModel.participants
+                }) { error in
+                    
+                }
                 editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
+                eventButton.isHidden = false
+                friendsButton.isHidden = false
             }
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editOrDoneButton)
         }
@@ -126,8 +145,27 @@ class EventVC: UIViewController {
     }
     
     @objc
-    func createEvent() { //close view
-        // send data
+    func createEvent() {
+        guard let name = eventNameTextField.text,
+            let date = eventDateTextView.text,
+            let time = eventTimeTextView.text,
+            let description = eventDescriptionTextField.text else { return }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.YYYY"
+        let dateFromString = formatter.date(from: date)
+//        formatter.dateFormat = "mm:HH"
+        let timeFromString = formatter.date(from: time)
+//        date.add(timeFromString)
+        Services.shared.dao.createEvent(ownerId: UUID()/*Services.shared.currentUserId*/,
+                                        name: name,
+                                        date: dateFromString ?? Date(),
+                                        description: description,
+                                        success: { eventModel in
+                
+        }) { error in
+            
+        }
         navigationController?.popViewController(animated: true)
     }
     

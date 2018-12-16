@@ -10,6 +10,7 @@ import Foundation
 
 class CalendarDataSource {
     var models: [CalendarCellModel] = []
+    var events: [EventModel] = []
     
     let numberOfDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     var date: Date = Date()
@@ -47,6 +48,12 @@ class CalendarDataSource {
             models.append(CalendarCellModel(title: ""))
         }
         self.models = models
+        
+//        Services.shared.dao.requestCalendar(userId: Services.shared.currentUserId, success: { calendar in
+//            self.events = calendar.events
+//        }, failure: { error in
+//            
+//        })
     }
 
     private func firstWeekDayOfMonth(date: Date) -> Int {

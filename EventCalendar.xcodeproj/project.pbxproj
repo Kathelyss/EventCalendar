@@ -28,7 +28,6 @@
 		94529D5E21BDC63200544878 /* FutureEventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D5D21BDC63200544878 /* FutureEventsDataSource.swift */; };
 		94529D6021BDC65400544878 /* FriendCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D5F21BDC65400544878 /* FriendCellModel.swift */; };
 		94529D6221BDC66400544878 /* FriendDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D6121BDC66400544878 /* FriendDataSource.swift */; };
-		94529D6821BDE02E00544878 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94529D6721BDE02E00544878 /* Event.swift */; };
 		9460A17921C6618D00A24CBD /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A17821C6618D00A24CBD /* ServerService.swift */; };
 		9460A17B21C664AD00A24CBD /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A17A21C664AD00A24CBD /* URLBuilder.swift */; };
 		9460A17D21C66A7D00A24CBD /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A17C21C66A7D00A24CBD /* TestModel.swift */; };
@@ -36,6 +35,9 @@
 		9460A18121C6757300A24CBD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A18021C6757300A24CBD /* UserModel.swift */; };
 		9460A18321C675F100A24CBD /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A18221C675F100A24CBD /* EventModel.swift */; };
 		9460A18621C676B200A24CBD /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A18521C676B200A24CBD /* CalendarModel.swift */; };
+		9460A18921C680BF00A24CBD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A18821C680BF00A24CBD /* Formatter.swift */; };
+		9460A18B21C6972D00A24CBD /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A18A21C6972D00A24CBD /* DAO.swift */; };
+		9460A18D21C698C900A24CBD /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460A18C21C698C900A24CBD /* Services.swift */; };
 		948F7466219877C1004859AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7465219877C1004859AF /* AppDelegate.swift */; };
 		948F7468219877C1004859AF /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F7467219877C1004859AF /* CalendarVC.swift */; };
 		948F746B219877C1004859AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948F7469219877C1004859AF /* Main.storyboard */; };
@@ -66,7 +68,6 @@
 		94529D5D21BDC63200544878 /* FutureEventsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventsDataSource.swift; sourceTree = "<group>"; };
 		94529D5F21BDC65400544878 /* FriendCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellModel.swift; sourceTree = "<group>"; };
 		94529D6121BDC66400544878 /* FriendDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataSource.swift; sourceTree = "<group>"; };
-		94529D6721BDE02E00544878 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9460A17821C6618D00A24CBD /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		9460A17A21C664AD00A24CBD /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		9460A17C21C66A7D00A24CBD /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
@@ -74,6 +75,9 @@
 		9460A18021C6757300A24CBD /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		9460A18221C675F100A24CBD /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		9460A18521C676B200A24CBD /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		9460A18821C680BF00A24CBD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		9460A18A21C6972D00A24CBD /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		9460A18C21C698C900A24CBD /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		948F7462219877C1004859AF /* EventCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948F7465219877C1004859AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948F7467219877C1004859AF /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
@@ -112,19 +116,10 @@
 			children = (
 				948F7467219877C1004859AF /* CalendarVC.swift */,
 				94529D5221BDAA9C00544878 /* CalendarDataSource.swift */,
+				94529D5021BDA9C000544878 /* CalendarCellModel.swift */,
+				9460A18521C676B200A24CBD /* CalendarModel.swift */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		94529D6321BDC6EE00544878 /* CellModels */ = {
-			isa = PBXGroup;
-			children = (
-				94529D5021BDA9C000544878 /* CalendarCellModel.swift */,
-				94529D5B21BDC61300544878 /* FutureEventCellModel.swift */,
-				94529D5721BDC5E400544878 /* ParticipantCellModel.swift */,
-				94529D5F21BDC65400544878 /* FriendCellModel.swift */,
-			);
-			path = CellModels;
 			sourceTree = "<group>";
 		};
 		94529D6421BDCA1E00544878 /* Friends */ = {
@@ -133,48 +128,55 @@
 				9451575221BC7CF000C73C86 /* FriendsVC.swift */,
 				94529D6121BDC66400544878 /* FriendDataSource.swift */,
 				94529D3F21BCABC200544878 /* AddFriendVC.swift */,
+				94529D5F21BDC65400544878 /* FriendCellModel.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
 		};
-		94529D6521BDCED100544878 /* FutureEvents */ = {
+		94529D6521BDCED100544878 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				94529D4521BCB5C600544878 /* EventVC.swift */,
 				94529D4321BCB5A700544878 /* FutureEventsVC.swift */,
 				94529D5D21BDC63200544878 /* FutureEventsDataSource.swift */,
+				94529D5B21BDC61300544878 /* FutureEventCellModel.swift */,
+				9460A18221C675F100A24CBD /* EventModel.swift */,
 			);
-			path = FutureEvents;
+			path = Events;
 			sourceTree = "<group>";
 		};
 		94529D6621BDD98D00544878 /* Participation */ = {
 			isa = PBXGroup;
 			children = (
-				94529D4921BCD57A00544878 /* ParticipationVC.swift */,
 				94529D4B21BCDAF300544878 /* ParticipantsVC.swift */,
 				94529D5921BDC5F700544878 /* ParticipantDataSource.swift */,
+				94529D4921BCD57A00544878 /* ParticipationVC.swift */,
+				94529D5721BDC5E400544878 /* ParticipantCellModel.swift */,
 			);
 			path = Participation;
-			sourceTree = "<group>";
-		};
-		9460A18421C6768C00A24CBD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9460A17C21C66A7D00A24CBD /* TestModel.swift */,
-				9460A18021C6757300A24CBD /* UserModel.swift */,
-				9460A18221C675F100A24CBD /* EventModel.swift */,
-				9460A18521C676B200A24CBD /* CalendarModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9460A18721C6799F00A24CBD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9460A18C21C698C900A24CBD /* Services.swift */,
+				9460A18A21C6972D00A24CBD /* DAO.swift */,
+				9460A17E21C66E7100A24CBD /* ServerDAO.swift */,
 				9460A17821C6618D00A24CBD /* ServerService.swift */,
 				9460A17A21C664AD00A24CBD /* URLBuilder.swift */,
-				9460A17E21C66E7100A24CBD /* ServerDAO.swift */,
+				9460A18821C680BF00A24CBD /* Formatter.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9460A19221C6A5F700A24CBD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				94529D4121BCB26D00544878 /* LoginVC.swift */,
+				9451575421BC7D2000C73C86 /* ProfileVC.swift */,
+				9460A18021C6757300A24CBD /* UserModel.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		948F7459219877C1004859AF = {
@@ -200,15 +202,11 @@
 				948F7469219877C1004859AF /* Main.storyboard */,
 				9460A18721C6799F00A24CBD /* Services */,
 				94529D5421BDBBF200544878 /* Calendar */,
-				94529D4521BCB5C600544878 /* EventVC.swift */,
-				94529D6721BDE02E00544878 /* Event.swift */,
 				94529D6421BDCA1E00544878 /* Friends */,
-				94529D6521BDCED100544878 /* FutureEvents */,
+				94529D6521BDCED100544878 /* Events */,
+				9460A19221C6A5F700A24CBD /* User */,
 				94529D6621BDD98D00544878 /* Participation */,
-				94529D4121BCB26D00544878 /* LoginVC.swift */,
-				9451575421BC7D2000C73C86 /* ProfileVC.swift */,
-				9460A18421C6768C00A24CBD /* Models */,
-				94529D6321BDC6EE00544878 /* CellModels */,
+				9460A17C21C66A7D00A24CBD /* TestModel.swift */,
 				94529D4F21BD653F00544878 /* Cells */,
 				948F746F219877C4004859AF /* Assets.xcassets */,
 				948F7474219877C4004859AF /* Info.plist */,
@@ -289,14 +287,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9460A18921C680BF00A24CBD /* Formatter.swift in Sources */,
 				94529D4821BCCBF700544878 /* FutureEventCell.swift in Sources */,
 				9460A17F21C66E7100A24CBD /* ServerDAO.swift in Sources */,
 				9451575521BC7D2000C73C86 /* ProfileVC.swift in Sources */,
 				948F7468219877C1004859AF /* CalendarVC.swift in Sources */,
 				9460A17D21C66A7D00A24CBD /* TestModel.swift in Sources */,
+				9460A18B21C6972D00A24CBD /* DAO.swift in Sources */,
 				948F7466219877C1004859AF /* AppDelegate.swift in Sources */,
 				94529D5E21BDC63200544878 /* FutureEventsDataSource.swift in Sources */,
 				94529D5A21BDC5F700544878 /* ParticipantDataSource.swift in Sources */,
+				9460A18D21C698C900A24CBD /* Services.swift in Sources */,
 				94529D4621BCB5C600544878 /* EventVC.swift in Sources */,
 				94529D4021BCABC200544878 /* AddFriendVC.swift in Sources */,
 				94529D6021BDC65400544878 /* FriendCellModel.swift in Sources */,
@@ -320,7 +321,6 @@
 				94529D4E21BCDD3300544878 /* ParticipantCell.swift in Sources */,
 				9460A18321C675F100A24CBD /* EventModel.swift in Sources */,
 				9460A18121C6757300A24CBD /* UserModel.swift in Sources */,
-				94529D6821BDE02E00544878 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

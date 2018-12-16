@@ -12,19 +12,14 @@ class FriendsDataSource {
     var models: [FriendCellModel] = []
     
     func createModels() {
-        var models: [FriendCellModel] = []
+        Services.shared.dao.requestFriends(userId: UUID(), success: { models in
+            for model in models {
+                self.models.append(FriendCellModel(id: model.id,
+                                                   name: model.name,
+                                                   avatar: model.avatar))
+            }
+        }) { error in
+        }
         
-        models.append(FriendCellModel(id: UUID(), name: "Иван Петров", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Петр Фёдоров", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Кристина Фролова", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Михаил Емельянов", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Анастасия Черных", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Ольга Клюшникова", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Елена Степанова", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Кузьма Подлодкин", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Андрей Кимрин", avatar: ""))
-        models.append(FriendCellModel(id: UUID(), name: "Яков Шелест", avatar: ""))
-        
-        self.models = models
     }
 }
