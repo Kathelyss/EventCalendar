@@ -13,15 +13,20 @@ class LoginVC: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        nameTextField.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         view.addGestureRecognizer(tapRecognizer)
         
-        loginButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 5
         loginButton.layer.borderWidth = CalendarStyle.borderWidth
         loginButton.layer.borderColor = CalendarStyle.borderAndTextColor
     }
@@ -34,17 +39,25 @@ class LoginVC: UIViewController {
     @IBAction func tapLoginButton(_ sender: UIButton) {
         guard let name = nameTextField.text else { return }
         
-        //if user exists, login
-        Services.shared.dao.login(name: name, success: { currentUser in
-//            Services.shared.currentUserId = currentUser.id
-        }) { error in
-            
+        if UserDefaults.standard.string(forKey: "name") == nil {
+            Services.shared.dao.login(name: name, success: { currentUser in
+                DispatchQueue.main.async {
+                    let id = currentUser.id.uuidString
+                    UserDefaults.standard.set(id, forKey: "id")
+                    UserDefaults.standard.set(name, forKey: "name")
+                    UserDefaults.standard.synchronize()
+                }
+            }) { error in
+                
+            }
+            performSegue(withIdentifier: "ToCalendarVC", sender: self)
+        } else {
+            performSegue(withIdentifier: "ToCalendarVC", sender: self)
         }
-        //else create user
-        Services.shared.dao.createUser(name: name, success: { currentUser in
-//            Services.shared.currentUserId = currentUser.id
-        }) { error in
-            
-        }
+    }
+    
+    @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
+        UserDefaults.standard.removeObject(forKey: "name")
+        UserDefaults.standard.removeObject(forKey: "id")
     }
 }

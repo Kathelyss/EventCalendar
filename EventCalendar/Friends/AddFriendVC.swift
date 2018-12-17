@@ -23,7 +23,7 @@ class AddFriendVC: UIViewController {
         tapRecognizer.addTarget(self, action: #selector(closeKeyboard))
         containerView.addGestureRecognizer(tapRecognizer)
         
-        addFriendButton.layer.cornerRadius = 10
+        addFriendButton.layer.cornerRadius = 5
         addFriendButton.layer.borderWidth = CalendarStyle.borderWidth
         addFriendButton.layer.borderColor = CalendarStyle.borderAndTextColor
     }

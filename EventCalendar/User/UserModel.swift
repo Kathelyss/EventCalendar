@@ -12,5 +12,6 @@ struct UserModel: Decodable {
     let id: UUID
     let name: String
     let avatar: String
-
+    let calendarId: UUID
+    
 }

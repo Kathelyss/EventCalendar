@@ -49,11 +49,14 @@ class CalendarDataSource {
         }
         self.models = models
         
-//        Services.shared.dao.requestCalendar(userId: Services.shared.currentUserId, success: { calendar in
-//            self.events = calendar.events
-//        }, failure: { error in
-//            
-//        })
+        guard let idString = UserDefaults.standard.string(forKey: "id"),
+            let id = UUID.init(uuidString: idString) else { return }
+        
+        Services.shared.dao.requestCalendar(userId: id, success: { calendar in
+            self.events = calendar.events
+        }, failure: { error in
+            
+        })
     }
 
     private func firstWeekDayOfMonth(date: Date) -> Int {

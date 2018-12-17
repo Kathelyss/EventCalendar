@@ -64,7 +64,7 @@ class EventVC: UIViewController {
     }
     
     func addButtons() {
-        friendsButton.layer.cornerRadius = 10
+        friendsButton.layer.cornerRadius = 5
         friendsButton.layer.borderWidth = CalendarStyle.borderWidth
         friendsButton.layer.borderColor = CalendarStyle.borderAndTextColor
         
@@ -88,7 +88,7 @@ class EventVC: UIViewController {
                 eventButton.isHidden = true
                 friendsButton.isHidden = true
             } else {
-                Services.shared.dao.requestEvent(eventId: UUID(), success: { eventModel in
+                Services.shared.dao.requestEvent(eventId: UUID(), calendarId: UUID(), success: { eventModel in
                     self.eventNameTextField.text = eventModel.name
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd.MM.YYYY"
@@ -109,12 +109,12 @@ class EventVC: UIViewController {
         
         if isMyEvent {
             eventButton.setTitle("Удалить событие", for: .normal)
-            eventButton.layer.cornerRadius = 10
+            eventButton.layer.cornerRadius = 5
             eventButton.layer.borderWidth = 0
             eventButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         } else {
             eventButton.setTitle("Отметить участие", for: .normal)
-            eventButton.layer.cornerRadius = 10
+            eventButton.layer.cornerRadius = 5
             eventButton.layer.borderWidth = CalendarStyle.borderWidth
             eventButton.layer.borderColor = CalendarStyle.borderAndTextColor
             eventButton.layer.backgroundColor = #colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 0.1).cgColor
@@ -158,6 +158,7 @@ class EventVC: UIViewController {
         let timeFromString = formatter.date(from: time)
 //        date.add(timeFromString)
         Services.shared.dao.createEvent(ownerId: UUID()/*Services.shared.currentUserId*/,
+                                        calendarId: UUID(),
                                         name: name,
                                         date: dateFromString ?? Date(),
                                         description: description,
