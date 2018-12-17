@@ -10,13 +10,19 @@ import UIKit
 
 class ParticipantsVC: UIViewController {
     @IBOutlet var tableView: UITableView!
+    var eventId: UUID!
     
     let dataSource = ParticipantsDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dataSource.createModels()
+        dataSource.eventId = eventId
+        dataSource.createModels() { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+            
+        }
         let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         backButton.setTitle("Назад", for: .normal)
         backButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)

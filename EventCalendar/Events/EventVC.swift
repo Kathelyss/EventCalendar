@@ -25,6 +25,7 @@ class EventVC: UIViewController {
     var eventName: String = ""
     var details: Date = Date()
     var participants: [UserModel] = []
+    var eventId: UUID!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,18 +89,20 @@ class EventVC: UIViewController {
                 eventButton.isHidden = true
                 friendsButton.isHidden = true
             } else {
-                Services.shared.dao.requestEvent(eventId: UUID(), calendarId: UUID(), success: { eventModel in
-                    self.eventNameTextField.text = eventModel.name
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "dd.MM.YYYY"
-                    self.eventDateTextView.text = formatter.string(from: eventModel.date)
-                    formatter.dateFormat = "mm:HH"
-                    self.eventTimeTextView.text = formatter.string(from: eventModel.date)
-                    self.eventDescriptionTextField.text = eventModel.description
-                    self.participants = eventModel.participants
-                }) { error in
-                    
-                }
+//                guard let idString = UserDefaults.standard.string(forKey: "id"),
+//                    let id = UUID.init(uuidString: idString) else { return }
+//                
+//                Services.shared.dao.requestCalendar(userId: id, success: { calendar in
+//                    self.eventNameTextField.text = calendar.events.name
+//                    let formatter = DateFormatter()
+//                    formatter.dateFormat = "dd.MM.YYYY"
+//                    self.eventDateTextView.text = formatter.string(from: eventModel.date)
+//                    formatter.dateFormat = "mm:HH"
+//                    self.eventTimeTextView.text = formatter.string(from: eventModel.date)
+//                    self.eventDescriptionTextField.text = eventModel.description
+//                    self.participants = eventModel.participants
+//                }) { error in
+//                }
                 editOrDoneButton.addTarget(self, action: #selector(editEvent), for: .touchUpInside)
                 eventButton.isHidden = false
                 friendsButton.isHidden = false
@@ -157,14 +160,16 @@ class EventVC: UIViewController {
 //        formatter.dateFormat = "mm:HH"
         let timeFromString = formatter.date(from: time)
 //        date.add(timeFromString)
-        Services.shared.dao.createEvent(ownerId: UUID()/*Services.shared.currentUserId*/,
-                                        calendarId: UUID(),
+        guard let calendarString = UserDefaults.standard.string(forKey: "calendar_id"),
+            let calendarId = UUID.init(uuidString: calendarString) else { return }
+        
+        Services.shared.dao.createEvent(calendarId: calendarId,
                                         name: name,
                                         date: dateFromString ?? Date(),
                                         description: description,
                                         success: { eventModel in
                 
-        }) { error in
+         }) { error in
             
         }
         navigationController?.popViewController(animated: true)
@@ -178,6 +183,12 @@ class EventVC: UIViewController {
     @objc
     func closeKeyboard() {
         view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ParticipantsVC {
+            vc.eventId = self.eventId
+        }
     }
     
     @IBAction func tapFriendsButton(_ sender: UIButton) {

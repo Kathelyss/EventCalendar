@@ -11,13 +11,17 @@ import Foundation
 class FriendsDataSource {
     var models: [FriendCellModel] = []
     
-    func createModels() {
-        Services.shared.dao.requestFriends(userId: UUID(), success: { models in
+    func createModels(completion: @escaping ()->Void) {
+        guard let idString = UserDefaults.standard.string(forKey: "id"),
+            let id = UUID.init(uuidString: idString) else { return }
+        
+        Services.shared.dao.requestFriends(userId: id, success: { models in
             for model in models {
                 self.models.append(FriendCellModel(id: model.id,
                                                    name: model.name,
                                                    avatar: model.avatar))
             }
+            completion()
         }) { error in
         }
         

@@ -17,7 +17,12 @@ class FriendsVC: UIViewController {
         super.viewDidLoad()
         
         addButtons()
-        dataSource.createModels()
+        dataSource.createModels() { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
     }
     
     func addButtons() {

@@ -54,8 +54,9 @@ class CalendarDataSource {
         
         Services.shared.dao.requestCalendar(userId: id, success: { calendar in
             self.events = calendar.events
-        }, failure: { error in
             
+        }, failure: { error in
+            print("\(error)")
         })
     }
 

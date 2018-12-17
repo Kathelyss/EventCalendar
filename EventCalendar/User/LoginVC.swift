@@ -43,8 +43,10 @@ class LoginVC: UIViewController {
             Services.shared.dao.login(name: name, success: { currentUser in
                 DispatchQueue.main.async {
                     let id = currentUser.id.uuidString
+                    let calendar_id = currentUser.calendarId.uuidString
                     UserDefaults.standard.set(id, forKey: "id")
                     UserDefaults.standard.set(name, forKey: "name")
+                    UserDefaults.standard.set(calendar_id, forKey: "calendar_id")
                     UserDefaults.standard.synchronize()
                 }
             }) { error in
@@ -59,5 +61,6 @@ class LoginVC: UIViewController {
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
         UserDefaults.standard.removeObject(forKey: "name")
         UserDefaults.standard.removeObject(forKey: "id")
+        UserDefaults.standard.removeObject(forKey: "calendar_id")
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 struct CalendarModel: Decodable {
     let id: UUID
-    let userId: UUID
+    let user: UserModel
     let events: [EventModel]
     
 }

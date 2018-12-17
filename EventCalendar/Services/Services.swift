@@ -12,8 +12,6 @@ class Services {
     static let shared: Services = Services()
     private init() {}
     
-//    var currentUserId: UUID!
-    
-    let dao: DAO = FakeDAO() //
+    let dao: DAO = ServerDAO()
     
 }

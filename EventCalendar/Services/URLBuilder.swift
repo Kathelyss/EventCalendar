@@ -18,10 +18,10 @@ class URLBuilder {
         if let parameters = parameters {
             var queryItems: [URLQueryItem] = []
             for (key, value) in parameters {
-                guard let key = key.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-                    let value = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-                        continue
-                }
+//                guard let key = key.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+//                    let value = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+//                        continue
+//                }
                 
                 queryItems.append(URLQueryItem(name: key, value: value))
             }

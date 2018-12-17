@@ -34,9 +34,10 @@ final class ServerService: NSObject {
         var request = URLRequest(url: url)
         //        log(url.absoluteString, type: .serverURL)
         request.httpMethod = "GET"
-        
+        print(request.url)
         let task = session.dataTask(with: url) { data, responseBody, error in
-//            self.printAsString(data: data)
+            
+            self.printAsString(data: data)
 //            print(String(describing: error))
             if let data = data {
                 success(data)

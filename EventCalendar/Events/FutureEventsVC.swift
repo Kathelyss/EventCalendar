@@ -14,11 +14,18 @@ class FutureEventsVC: UIViewController {
     let dataSource = FutureEventsDataSource()
     var navigationTitle: String = "Будущие события"
     var date: Date?
+    var events: [EventModel] = []
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addButtons()
-        dataSource.createModels()
+        dataSource.createModels(from: events)
+        tableView.reloadData()
         if let date = date {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM"
@@ -36,6 +43,7 @@ class FutureEventsVC: UIViewController {
 //            vc.navigationTitle = "Детали события"
             if let model = sender as? FutureEventCellModel {
                 vc.eventName = model.eventTitle
+                vc.eventId = model.id
 //                vc.details = model.eventDetails
             }
         }

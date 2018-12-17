@@ -18,12 +18,6 @@ class CalendarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Services.shared.dao.requestTest(success: { testModel in
-            print(String(describing: testModel))
-        }) { error in
-            print(String(describing: error))
-        }
-        
         addButtons()
         collectionView.allowsMultipleSelection = false
         dataSource.createModels(date: Date())
@@ -64,6 +58,7 @@ class CalendarVC: UIViewController {
             vc.isMyEvent = true
             vc.isNewEvent = true
         } else if let vc = segue.destination as? FutureEventsVC {
+            vc.events = dataSource.events
             if let indexPath = sender as? IndexPath {
                 vc.date = dataSource.dateAt(indexPath)
             }
