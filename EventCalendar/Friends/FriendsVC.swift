@@ -65,6 +65,9 @@ class FriendsVC: UIViewController {
 }
 
 extension FriendsVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // present friend's Profile
+    }
     
 }
 

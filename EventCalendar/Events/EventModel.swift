@@ -9,6 +9,7 @@
 import Foundation
 
 struct EventModel: Decodable {
+    let ownerId: UUID
     let id: UUID
     let name: String
     let date: Date?

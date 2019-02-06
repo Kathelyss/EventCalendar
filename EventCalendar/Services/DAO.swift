@@ -13,7 +13,7 @@ protocol DAO {
 //    func requestUser(userId: UUID, success: @escaping (UserModel) -> Void, failure: @escaping (Error) -> Void)
 //    func createUser(name: String, success: @escaping (UserModel) -> Void, failure: @escaping (Error) -> Void)
     func requestFriends(userId: UUID, success: @escaping ([UserModel]) -> Void, failure: @escaping (Error) -> Void)
-    func createEvent(calendarId: UUID, name: String, date: Date, description: String,
+    func addEvent(calendarId: UUID, name: String, date: Date, description: String,
                      success: @escaping (EventModel) -> Void, failure: @escaping (Error) -> Void)
 
     func requestAllEvents(success: @escaping ([EventModel]) -> Void, failure: @escaping (Error) -> Void)

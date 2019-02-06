@@ -50,7 +50,7 @@ class CalendarDataSource {
         self.models = models
         
         guard let idString = UserDefaults.standard.string(forKey: "id"),
-            let id = UUID.init(uuidString: idString) else { return }
+            let id = UUID.init(uuidString: idString.lowercased()) else { return }
         
         Services.shared.dao.requestCalendar(userId: id, success: { calendar in
             self.events = calendar.events

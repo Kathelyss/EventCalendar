@@ -9,6 +9,7 @@
 import Foundation
 
 struct FutureEventCellModel {
+    let ownerId: UUID
     let id: UUID
     let eventTitle: String
     let eventDetails: String

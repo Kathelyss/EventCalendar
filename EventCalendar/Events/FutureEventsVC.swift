@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum Filter {
+    case mine, friends, all
+}
+
 class FutureEventsVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     
@@ -40,17 +44,17 @@ class FutureEventsVC: UIViewController {
         if let vc = segue.destination as? EventVC {
             vc.isMyEvent = false
             vc.isNewEvent = false
-//            vc.navigationTitle = "Детали события"
+            //            vc.navigationTitle = "Детали события"
             if let model = sender as? FutureEventCellModel {
                 vc.eventName = model.eventTitle
                 vc.eventId = model.id
-//                vc.details = model.eventDetails
+                //                vc.details = model.eventDetails
             }
         }
     }
     
     func addButtons() {
-        let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)) // hidden when observe friend's calendar
+        let addEventButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         addEventButton.setTitle("⊕", for: .normal)
         addEventButton.setTitleColor(#colorLiteral(red: 0.2300778031, green: 0.5918118954, blue: 0.828825593, alpha: 1), for: .normal)
         addEventButton.titleLabel?.font = UIFont(name: "Helvetica", size: 25)
@@ -67,6 +71,30 @@ class FutureEventsVC: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
+    func filterEvents(criteria: Filter) {
+        let eventsList = dataSource.models
+        guard let myId = UserDefaults.standard.string(forKey: "name")?.lowercased() else {
+            print("Oops, can not get myId [Future EventsVC]")
+            return
+        }
+
+        switch criteria {
+        case .mine:
+            dataSource.filteredModels = eventsList.filter { $0.ownerId.uuidString.lowercased() == myId }
+            break
+        case .friends:
+            dataSource.filteredModels = eventsList.filter { $0.ownerId.uuidString.lowercased() != myId }
+            break
+        case .all:
+            dataSource.filteredModels = dataSource.models
+            break
+        default:
+            print("Oops, can not filter Events [Future EventsVC]")
+            dataSource.filteredModels = dataSource.models
+            break
+        }
+    }
+    
     @objc
     func addEvent() {
         performSegue(withIdentifier: "ToEventVC", sender: self)
@@ -78,12 +106,15 @@ class FutureEventsVC: UIViewController {
     }
     
     @IBAction func tapAllEventsButton(_ sender: UIButton) {
+        filterEvents(criteria: .all)
     }
-
+    
     @IBAction func tapMyEventsButton(_ sender: UIButton) {
+        filterEvents(criteria: .mine)
     }
-
+    
     @IBAction func tapFriendsEventsButton(_ sender: UIButton) {
+        filterEvents(criteria: .friends)
     }
 }
 
@@ -93,14 +124,14 @@ extension FutureEventsVC: UITableViewDelegate {
 
 extension FutureEventsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.models.count //date == nil ? dataSource.models.count : dataSource.modelsForDate.count
+        return dataSource.filteredModels.count //date == nil ? dataSource.models.count : dataSource.modelsForDate.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FutureEventCell", for: indexPath)
         
         if let cell = cell as? FutureEventCell {
-            let model = dataSource.models[indexPath.row] //date == nil ? dataSource.models[indexPath.row] : dataSource.modelsForDate[indexPath.row]
+            let model = dataSource.filteredModels[indexPath.row] //date == nil ? dataSource.models[indexPath.row] : dataSource.modelsForDate[indexPath.row]
             cell.eventNameLabel.text = model.eventTitle
             cell.eventDetailsLabel.text = model.eventDetails
         }
@@ -112,7 +143,7 @@ extension FutureEventsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = dataSource.models[indexPath.row] //dataSource.modelsForDate[indexPath.row]
+        let model = dataSource.filteredModels[indexPath.row] //dataSource.modelsForDate[indexPath.row]
         performSegue(withIdentifier: "ToEventVC", sender: model)
     }
 }

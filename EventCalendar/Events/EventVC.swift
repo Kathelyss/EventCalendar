@@ -85,7 +85,7 @@ class EventVC: UIViewController {
             editOrDoneButton.contentHorizontalAlignment = .right
             if isNewEvent {
                 //show empty event
-                editOrDoneButton.addTarget(self, action: #selector(createEvent), for: .touchUpInside)
+                editOrDoneButton.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
                 eventButton.isHidden = true
                 friendsButton.isHidden = true
             } else {
@@ -163,7 +163,7 @@ class EventVC: UIViewController {
         guard let calendarString = UserDefaults.standard.string(forKey: "calendar_id"),
             let calendarId = UUID.init(uuidString: calendarString) else { return }
         
-        Services.shared.dao.createEvent(calendarId: calendarId,
+        Services.shared.dao.addEvent(calendarId: calendarId,
                                         name: name,
                                         date: dateFromString ?? Date(),
                                         description: description,

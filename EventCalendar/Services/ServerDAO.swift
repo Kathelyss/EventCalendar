@@ -19,7 +19,7 @@ class ServerDAO: DAO {
     
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-YYYY hh:mm"
+        formatter.dateFormat = "dd-MM-YYYY HH:mm"
         return formatter
     }()
     
@@ -30,20 +30,6 @@ class ServerDAO: DAO {
                       failure: failure)
     }
     
-//    func requestUser(userId: UUID, success: @escaping (UserModel) -> Void, failure: @escaping (Error) -> Void) {
-//        serverGetData(endPoint: "getUser",
-//                      parameters: ["userId": userId.uuidString],
-//                      success: success,
-//                      failure: failure)
-//    }
-//    
-//    func createUser(name: String, success: @escaping (UserModel) -> Void, failure: @escaping (Error) -> Void) {
-//        serverGetData(endPoint: "postUser",
-//                      parameters: ["name": name],
-//                      success: success,
-//                      failure: failure)
-//    }
-    
     func requestFriends(userId: UUID, success: @escaping ([UserModel]) -> Void, failure: @escaping (Error) -> Void) {
         serverGetData(endPoint: "user/all",
                       parameters: ["userId": userId.uuidString.lowercased()],
@@ -51,13 +37,47 @@ class ServerDAO: DAO {
                       failure: failure)
     }
 
-    func createEvent(calendarId: UUID, name: String, date: Date, description: String,
+    func addFriend(name: String, success: @escaping (UserModel) -> Void, failure: @escaping (Error) -> Void) {
+        serverGetData(endPoint: "user/add",
+                      parameters: ["name": name.capitalized],
+                      success: success,
+                      failure: failure)
+    }
+    
+    func removeFriend(userId: UUID, success: @escaping ([UserModel]) -> Void, failure: @escaping (Error) -> Void) {
+        serverGetData(endPoint: "user/remove",
+                      parameters: ["userId": userId.uuidString.lowercased()],
+                      success: success,
+                      failure: failure)
+    }
+
+    func addEvent(calendarId: UUID, name: String, date: Date, description: String,
                      success: @escaping (EventModel) -> Void, failure: @escaping (Error) -> Void) {
+        let eventId = UUID() // on server ?
         serverGetData(endPoint: "event/post",
                       parameters: ["calendarId": calendarId.uuidString.lowercased(),
+                                   "eventId": eventId.uuidString.lowercased(),
                                    "name": name,
                                    "date": formatter.string(from: date),
                                    "details": description],
+                      success: success,
+                      failure: failure)
+    }
+    
+    func editEvent(calendarId: UUID, eventId: UUID, name: String, date: Date, description: String,
+                   success: @escaping (EventModel) -> Void, failure: @escaping (Error) -> Void) {
+        serverGetData(endPoint: "event/edit",
+                      parameters: ["calendarId": calendarId.uuidString.lowercased(),
+                                   "eventId": eventId.uuidString.lowercased()],
+                      success: success,
+                      failure: failure)
+    }
+    
+    func removeEvent(calendarId: UUID, eventId: UUID, success: @escaping ([EventModel]) -> Void,
+                     failure: @escaping (Error) -> Void) {
+        serverGetData(endPoint: "event/remove",
+                      parameters: ["calendarId": calendarId.uuidString.lowercased(),
+                                   "eventId": eventId.uuidString.lowercased()],
                       success: success,
                       failure: failure)
     }
@@ -69,14 +89,16 @@ class ServerDAO: DAO {
                       failure: failure)
     }
     
-    func requestParticipants(eventId: UUID, success: @escaping ([UserModel]) -> Void, failure: @escaping (Error) -> Void) {
+    func requestParticipants(eventId: UUID, success: @escaping ([UserModel]) -> Void,
+                             failure: @escaping (Error) -> Void) {
         serverGetData(endPoint: "event/participants",
                       parameters: ["id": eventId.uuidString.lowercased()],
                       success: success,
                       failure: failure)
     }
     
-    func addParticipant(eventId: UUID, userId: UUID, success: @escaping ([UserModel]) -> Void, failure: @escaping (Error) -> Void) {
+    func addParticipant(eventId: UUID, userId: UUID, success: @escaping ([UserModel]) -> Void,
+                        failure: @escaping (Error) -> Void) {
         serverGetData(endPoint: "event/participants/add",
                       parameters: ["id": eventId.uuidString.lowercased(),
                                    "userId": userId.uuidString.lowercased()],
@@ -84,13 +106,15 @@ class ServerDAO: DAO {
                       failure: failure)
     }
 
-    func removeParticipant(eventId: UUID, userId: UUID, success: @escaping ([UserModel]) -> Void, failure: @escaping (Error) -> Void) {
+    func removeParticipant(eventId: UUID, userId: UUID, success: @escaping ([UserModel]) -> Void,
+                           failure: @escaping (Error) -> Void) {
         serverGetData(endPoint: "event/participants/remove",
                       parameters: ["id": eventId.uuidString.lowercased(),
                                    "userId": userId.uuidString.lowercased()],
                       success: success,
                       failure: failure)
     }
+    
     func requestCalendar(userId: UUID, success: @escaping (CalendarModel) -> Void, failure: @escaping (Error) -> Void) {
         serverGetData(endPoint: "calendar/get",
                       parameters: ["userId": userId.uuidString.lowercased()],
