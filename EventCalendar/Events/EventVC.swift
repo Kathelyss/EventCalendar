@@ -148,7 +148,7 @@ class EventVC: UIViewController {
     }
     
     @objc
-    func createEvent() {
+    func addEvent() {
         guard let name = eventNameTextField.text,
             let date = eventDateTextView.text,
             let time = eventTimeTextView.text,

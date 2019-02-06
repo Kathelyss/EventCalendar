@@ -72,6 +72,8 @@ class FutureEventsVC: UIViewController {
     }
     
     func filterEvents(criteria: Filter) {
+        // filter Events for choosen Date!
+        
         let eventsList = dataSource.models
         guard let myId = UserDefaults.standard.string(forKey: "name")?.lowercased() else {
             print("Oops, can not get myId [Future EventsVC]")
@@ -124,14 +126,14 @@ extension FutureEventsVC: UITableViewDelegate {
 
 extension FutureEventsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.filteredModels.count //date == nil ? dataSource.models.count : dataSource.modelsForDate.count
+        return dataSource.filteredModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FutureEventCell", for: indexPath)
         
         if let cell = cell as? FutureEventCell {
-            let model = dataSource.filteredModels[indexPath.row] //date == nil ? dataSource.models[indexPath.row] : dataSource.modelsForDate[indexPath.row]
+            let model = dataSource.filteredModels[indexPath.row]
             cell.eventNameLabel.text = model.eventTitle
             cell.eventDetailsLabel.text = model.eventDetails
         }
@@ -143,7 +145,7 @@ extension FutureEventsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = dataSource.filteredModels[indexPath.row] //dataSource.modelsForDate[indexPath.row]
+        let model = dataSource.filteredModels[indexPath.row]
         performSegue(withIdentifier: "ToEventVC", sender: model)
     }
 }
